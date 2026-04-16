@@ -272,7 +272,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     /* ─── ABOUT ─── */
     #about { background: var(--bg2); }
     .about-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;
     }
     .about-card {
       background: var(--card-bg); border: 1px solid var(--border);
@@ -658,13 +658,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 	  </p>
       <div class="hero-btns">
         <button class="btn btn-primary" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
-          🚀 View Projects
+          <i class="fas fa-diagram-project"></i> View Projects
         </button>
         <button class="btn btn-outline" onclick="alert('Resume download would trigger here.')">
-          📄 Download Resume
+          <i class="fas fa-download"></i> Download Resume
         </button>
         <button class="btn btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-          💬 Contact Me
+          <i class="fas fa-phone"></i> Contact Me
         </button>
       </div>
     </div>
@@ -705,33 +705,34 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     <div class="section-header reveal">
       <div class="section-label">Who I am</div>
       <h2 class="section-title">About <span class="hl">Me</span></h2>
-      <p class="section-desc">A full-stack developer who loves crafting cloud-native, enterprise-grade solutions.</p>
+      <p class="section-desc">Crafting scalable enterprise software with cloud-native excellence.</p>
     </div>
     <div class="about-grid">
       <div class="about-card reveal">
         <div class="about-text">
-          <p>I'm a <strong>Java Full Stack Developer</strong> with hands-on expertise in building and deploying enterprise-grade applications. My core stack spans <strong>Spring Boot microservices</strong> on the backend and <strong>Angular</strong> on the frontend, backed by scalable cloud infrastructure on <strong>Azure and AWS</strong>.</p>
-          <p>I thrive on solving complex architectural challenges — from designing RESTful APIs that handle millions of requests to orchestrating containerized workloads with <strong>Docker and Kubernetes</strong>. I'm equally comfortable discussing data models, reviewing pull requests, and shipping production code.</p>
-          <p>Beyond code, I enjoy competitive problem solving and regularly sharpen my <strong>DSA skills</strong> to stay sharp on algorithmic thinking and system design.</p>
-        </div>
+          <p>I am a <strong>Java Full Stack Developer</strong> with extensive hands-on experience in designing, building, and deploying <strong>enterprise-grade applications</strong>. My expertise spans <strong>Spring Boot microservices, Angular-based frontends</strong>, and scalable <strong>cloud-native architectures</strong> powered by <strong>Azure and AWS</strong>.</p>
+          <p>I specialize in solving complex architectural challenges — from building high-performance <strong>RESTful APIs</strong> that handle millions of requests to orchestrating containerized workloads with <strong>Docker and Kubernetes</strong>.</p>
+          <p>I am equally passionate about <strong>system design, code quality, performance optimization, and DevOps practices</strong>, ensuring software solutions are scalable, secure, and production-ready.</p>
+		  <p>Beyond development, I enjoy <strong>competitive problem solving and DSA</strong>, continuously sharpening my analytical and system design skills.</p>
+		</div>
         <div class="about-highlights">
           <div class="highlight-item">
-            <div class="icon">🏗</div>
+            <div class="icon"><i class="fas fa-building"></i></div>
             <strong>Enterprise Apps</strong>
             <span>Scalable architecture</span>
           </div>
           <div class="highlight-item">
-            <div class="icon">☁</div>
+            <div class="icon"><i class="fas fa-cloud"></i></div>
             <strong>Cloud Native</strong>
             <span>Azure & AWS certified</span>
           </div>
           <div class="highlight-item">
-            <div class="icon">🐳</div>
+            <div class="icon"> <i class="fas fa-gears"></i></div>
             <strong>DevOps</strong>
             <span>Docker & K8s</span>
           </div>
           <div class="highlight-item">
-            <div class="icon">🧩</div>
+            <div class="icon"><i class="fas fa-puzzle-piece"></i></div>
             <strong>Problem Solver</strong>
             <span>DSA & system design</span>
           </div>
@@ -739,28 +740,28 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       </div>
       <div class="about-metrics">
         <div class="metric-card reveal reveal-delay-1">
-          <div class="metric-icon">💼</div>
+          <div class="metric-icon"><i class="fas fa-briefcase"></i></div>
           <div class="metric-info">
             <strong>12+ Years</strong>
             <span>Professional experience in full-stack development</span>
           </div>
         </div>
         <div class="metric-card reveal reveal-delay-2">
-          <div class="metric-icon">🔧</div>
+          <div class="metric-icon"><i class="fas fa-code"></i></div>
           <div class="metric-info">
             <strong>15+ Technologies</strong>
             <span>Java, Spring Boot, Angular, SQL, REST, Cloud, DevOps</span>
           </div>
         </div>
         <div class="metric-card reveal reveal-delay-3">
-          <div class="metric-icon">☁</div>
+          <div class="metric-icon"><i class="fas fa-cloud"></i></div>
           <div class="metric-info">
             <strong>Multi-Cloud</strong>
             <span>Production deployments on both Azure and AWS</span>
           </div>
         </div>
         <div class="metric-card reveal reveal-delay-4">
-          <div class="metric-icon">🏆</div>
+          <div class="metric-icon"><i class="fas fa-award"></i></div>
           <div class="metric-info">
             <strong>4 Certifications</strong>
             <span>Azure, AWS, Kubernetes, Java — industry recognized</span>
