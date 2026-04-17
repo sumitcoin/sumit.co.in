@@ -598,6 +598,19 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       .certs-grid { grid-template-columns: 1fr 1fr; }
       .hero-stats { gap: 0.75rem; }
     }
+	
+	 /* EDUCATION & AWARDS */
+    .ea-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+    .ea-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius2);padding:1.9rem;backdrop-filter:blur(10px)}
+    .ea-head{font-family:'Syne',sans-serif;font-weight:700;font-size:0.98rem;margin-bottom:1.4rem;display:flex;align-items:center;gap:0.55rem;color:var(--accent2)}
+    .ea-item{padding:0.85rem 0;border-bottom:1px solid var(--border);display:flex;gap:0.9rem;align-items:flex-start}
+    .ea-item:last-child{border-bottom:none;padding-bottom:0}
+    .ea-icon{width:36px;height:36px;border-radius:10px;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:0.95rem;flex-shrink:0}
+    .ea-text strong{display:block;font-size:0.85rem;font-weight:700;color:var(--text);margin-bottom:0.18rem}
+    .ea-text span{font-size:0.76rem;color:var(--text3)}
+    .ea-yr{font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--accent2);display:block;margin-top:0.15rem}
+    .award-badge{display:inline-block;margin-top:0.28rem;font-size:0.66rem;padding:0.16rem 0.52rem;border-radius:50px;background:rgba(244,114,182,0.1);border:1px solid rgba(244,114,182,0.25);color:var(--accent4)}
+
   </style>
 </head>
 <body>
@@ -1035,16 +1048,25 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     <div class="timeline">
 
       <div class="timeline-item reveal">
-        <div class="timeline-date">📅 2023 – Present</div>
+        <div class="timeline-date">📅 2021 – Present</div>
         <div class="timeline-card">
-          <div class="timeline-role">Java Full Stack Developer</div>
-          <div class="timeline-company">Current Organization — India</div>
+          <div class="timeline-role">Specialist Software Engineer</div>
+          <div class="timeline-company">LTM (Larsen & Toubro)</div>
           <ul class="timeline-desc">
-            <li>Architected and delivered the CASO Airport Security Monitoring Dashboard serving real-time data to 100+ security officers</li>
-            <li>Built RESTful microservices with Spring Boot, achieving 40% reduction in API latency through caching and query optimization</li>
-            <li>Led Angular frontend development with lazy loading, state management, and accessibility standards</li>
-            <li>Deployed containerized services to Azure AKS with auto-scaling policies and zero-downtime rolling updates</li>
-            <li>Mentored junior developers on clean code practices, design patterns, and code review best practices</li>
+			<li>Orchestrated a team of 8 developers to deliver a microservices architecture, reducing response time by 30% and enhancing scalability.
+            <li>Engineered RESTful APIs to seamlessly
+				integrate with third-party services and internal
+				applications, effectively managing over 1
+				million daily requests.</li>
+            <li>Streamlined code reviews, sprint planning,
+				and task assignments to optimize productivity,
+				leading to a 20% reduction in project delivery
+				timelines.</li>
+            <li>Collaborated with cross-functional teams and
+				stakeholders to ensure successful delivery and
+				alignment with business objectives.</li>
+            <li>Mentored developers on best practices, design patterns, and debugging, improving code quality and team skills.</li>
+            
           </ul>
           <div class="timeline-chips">
             <span class="chip">Java</span>
@@ -1053,30 +1075,72 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
             <span class="chip">Azure</span>
             <span class="chip">Docker</span>
             <span class="chip">Kubernetes</span>
-            <span class="chip">SQL</span>
+            <span class="chip">PostgreSQL</span>
+			<span class="chip">Arango</span>
+			<span class="chip">MongoDB</span>
+			<span class="chip">AWS</span>
           </div>
         </div>
       </div>
 
       <div class="timeline-item reveal reveal-delay-1">
-        <div class="timeline-date">📅 2021 – 2023</div>
+        <div class="timeline-date">📅 2015 – 2021</div>
         <div class="timeline-card">
-          <div class="timeline-role">Software Developer</div>
-          <div class="timeline-company">Previous Company — India</div>
+          <div class="timeline-role">Senior Software Engineer</div>
+          <div class="timeline-company">Wipro Limited</div>
           <ul class="timeline-desc">
-            <li>Developed and maintained enterprise web applications using Java Spring MVC and Angular frameworks</li>
-            <li>Designed and optimized MySQL database schemas, improving query performance by 30%</li>
-            <li>Integrated third-party REST APIs and built robust error-handling and retry mechanisms</li>
-            <li>Contributed to the Holiday and Audit Management systems from requirement gathering to production deployment</li>
-            <li>Participated in Agile sprints, daily stand-ups, sprint planning, and retrospectives</li>
+            <li>Built key modules with Spring Boot and Hibernate, enhancing system reliability and enabling 50% higher transaction capacity.</li>
+            <li>Led backend optimization initiatives including
+				refactoring and database indexing, resulting in
+				a significant 40% reduction in page load times.</li>
+            <li>Managed migration of legacy monolith to microservices, successfully transitioning over 75% of services.</li>
+            <li>Facilitated Agile ceremonies, conducted
+				stand-up meetings, and oversaw team
+				progress using Jira, fostering a well-structured
+				and efficient workflow.</li>
+            <li>Conducted regular code reviews and
+				contributed to documentation, ensuring
+				codebase maintainability and facilitating
+				knowledge transfer within the team.</li>
+			<li>Awarded Employee of the Year 2018 and Most Valuable Staff 2016</li>
           </ul>
           <div class="timeline-chips">
             <span class="chip">Java</span>
             <span class="chip">Spring MVC</span>
-            <span class="chip">Angular</span>
-            <span class="chip">MySQL</span>
+            <span class="chip">HTML</span>
+            <span class="chip">Oracle 12c</span>
+			<span class="chip">MSSQL</span>
             <span class="chip">REST APIs</span>
-            <span class="chip">Git</span>
+            <span class="chip">Azure DevOps</span>
+			<span class="chip">WebLogic</span>
+			<span class="chip">Apache</span>
+          </div>
+        </div>
+      </div>
+	  
+	  <div class="timeline-item reveal reveal-delay-2">
+        <div class="timeline-date">📅 2013 – 2015</div>
+        <div class="timeline-card">
+          <div class="timeline-role">Java Developer</div>
+          <div class="timeline-company">Red Pyramid Infosystems Pvt Ltd</div>
+          <ul class="timeline-desc">
+            <li>Developed web applications using Struts 2, delivering scalable and maintainable enterprise solutions.</li>
+            <li>Designed and implemented backend services for mobile applications, enabling seamless integration with core systems.</li>
+            <li>Built and optimized RESTful services, improving performance and supporting cross-platform functionality.</li>
+            <li>Collaborated with cross-functional teams to deliver high-quality features aligned with business requirements.</li>
+            <li>Contributed to an award-winning application, recognized as Best Application at CIO 2014 for the Shipping Industry.</li>
+			<li>Awarded Employee of the Year 2014 for outstanding delivery and client satisfaction.</li>
+          </ul>
+          <div class="timeline-chips">
+            <span class="chip">Java</span>
+            <span class="chip">Struts 2.0</span>
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+			<span class="chip">SOAP</span>
+            <span class="chip">REST APIs</span>
+            <span class="chip">SVN</span>
+			<span class="chip">WebLogic</span>
+			<span class="chip">Apache</span>
           </div>
         </div>
       </div>
@@ -1099,27 +1163,72 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       <div class="cert-card reveal">
         <div class="cert-icon"><i class="fas fa-cloud"></i></div>
         <div class="cert-name">Microsoft Azure</div>
-        <div class="cert-provider">Microsoft · AZ-900 / AZ-204</div>
+        <!--<div class="cert-provider">Microsoft · AZ-900 / AZ-204</div>-->
         <div class="cert-badge">✓ Certified</div>
       </div>
       <div class="cert-card reveal reveal-delay-1">
         <div class="cert-icon"><i class="fab fa-aws"></i></div>
         <div class="cert-name">AWS Cloud</div>
-        <div class="cert-provider">Amazon Web Services · Cloud Practitioner</div>
+        <!--<div class="cert-provider">Amazon Web Services · Cloud Practitioner</div>-->
         <div class="cert-badge">✓ Certified</div>
       </div>
       <div class="cert-card reveal reveal-delay-2">
         <div class="cert-icon"><i class="fas fa-dharmachakra"></i></div>
         <div class="cert-name">Kubernetes</div>
-        <div class="cert-provider">CNCF · CKA / CKAD</div>
+        <!--<div class="cert-provider">CNCF · CKA / CKAD</div>-->
         <div class="cert-badge">✓ Certified</div>
       </div>
       <div class="cert-card reveal reveal-delay-3">
         <div class="cert-icon"><i class="fas fa-mug-hot"></i></div>
         <div class="cert-name">Java Certification</div>
-        <div class="cert-provider">Oracle · OCA / OCP</div>
+        <!--<div class="cert-provider">Oracle · OCA / OCP</div>-->
         <div class="cert-badge">✓ Certified</div>
       </div>
+    </div>
+	<div class="skill-cat-title reveal"><i class="fas fa-trophy"></i> Awards & Recognition</div>
+    <div class="skills-grid">
+	  <div class="skill-card reveal reveal-delay">
+        <span class="skill-icon"><i class="fas fa-award"></i></span>
+        <div class="skill-name">Super Crew Award</div>
+		<div class="ea-text">
+		<span>LTM · 2024</span>
+        <div class="award-badge"><i class="fas fa-bolt"></i> Spot Award</div>
+		</div>
+      </div>
+	  <div class="skill-card reveal reveal-delay-1">
+        <span class="skill-icon"><i class="fas fa-award"></i></span>
+        <div class="skill-name">Super Crew Award</div>
+		<div class="ea-text">
+		<span>LTM · 2023</span>
+        <div class="award-badge"><i class="fas fa-bolt"></i> Spot Award</div>
+		</div>
+      </div>
+      <div class="skill-card reveal reveal-delay-2">
+        <span class="skill-icon"><i class="fas fa-trophy"></i></span>
+        <div class="skill-name">Employee of the Year</div>
+		<div class="ea-text">
+		<span>Wipro Ltd · 2018</span>
+        <div class="award-badge"><i class="fas fa-trophy"></i> Gold Award</div>
+		</div>
+      </div>
+	  
+      <div class="skill-card reveal reveal-delay-3">
+        <span class="skill-icon"><i class="fas fa-award"></i></span>
+        <div class="skill-name">Most Valuable Staff</div>
+		<div class="ea-text">
+		<span>Wipro Ltd · 2016</span>
+        <div class="award-badge"><i class="fas fa-medal"></i> Excellence Award</div>
+		</div>
+      </div>
+	 <div class="skill-card reveal reveal-delay-4">
+        <span class="skill-icon"><i class="fas fa-trophy"></i></span>
+        <div class="skill-name">Employee of the Year</div>
+		<div class="ea-text">
+		<span>Red Pyramid · 2014</span>
+        <div class="award-badge"><i class="fas fa-trophy"></i> Gold Award</div>
+		</div>
+      </div>
+	 
     </div>
   </div>
 </section>
