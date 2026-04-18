@@ -43,6 +43,6 @@ Feel free to reach out to me!
 
 Email: sumit.brjn@gmail.com
 LinkedIn: https://linkedin.com/in/sumit10/
-GitHub: https://github.com/amiablemusafir/
+GitHub: https://github.com/sumitcoin/
 Website: https://www.sumit.co.in
 Thank you for visiting my personal website!
