@@ -1383,12 +1383,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 	  };
 
 	  fetch("https://script.google.com/macros/s/AKfycbx0ycc5TkZdPDF_NuLj2yrNEuhJH-2A2YykcX6TRtg40wVx8HC2zr_IB9xKc4-uM6apfw/exec", {
-		method: "POST",
-		body: JSON.stringify(data)
-		headers: {
-		  "Content-Type": "application/json"
-		},
-		mode: "no-cors"
+		  method: "POST",
+		  headers: {
+		    "Content-Type": "application/json"
+		  },
+		  body: JSON.stringify(data),
+		  mode: "no-cors"
 	  })
 	  .then(res => res.json())
 	  .then(() => {
