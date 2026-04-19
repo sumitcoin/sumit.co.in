@@ -1372,20 +1372,20 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <script>
 	// --- Send Message ---
+	
 	document.getElementById("contactForm").addEventListener("submit", function(e) {
 	  e.preventDefault();
-	
 	  const formData = new FormData();
-	  formData.append("name", document.getElementById("name").value);
-	  formData.append("email", document.getElementById("email").value);
-	  formData.append("subject", document.getElementById("subject").value);
-	  formData.append("message", document.getElementById("message").value);
+	  formData.append("name", name);
+	  formData.append("email", email);
+	  formData.append("subject", subject);
+	  formData.append("message", message);
 	
-	  fetch("https://script.google.com/macros/s/AKfycbx0ycc5TkZdPDF_NuLj2yrNEuhJH-2A2YykcX6TRtg40wVx8HC2zr_IB9xKc4-uM6apfw/exec", {
+  	  fetch("https://script.google.com/macros/s/AKfycbx0ycc5TkZdPDF_NuLj2yrNEuhJH-2A2YykcX6TRtg40wVx8HC2zr_IB9xKc4-uM6apfw/exec", {
 	    method: "POST",
 	    body: formData,
-		mode: "no-cors"
-	  })
+	    mode: "no-cors"
+	  });
 	  .then(() => {
 	    alert("Message sent successfully!");
 	    document.getElementById("contactForm").reset();
