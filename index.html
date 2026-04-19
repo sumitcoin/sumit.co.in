@@ -1375,11 +1375,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 	
 	document.getElementById("contactForm").addEventListener("submit", function(e) {
 	  e.preventDefault();
+	  
 	  const formData = new FormData();
-	  formData.append("name", name);
-	  formData.append("email", email);
-	  formData.append("subject", subject);
-	  formData.append("message", message);
+	  formData.append("name", document.getElementById("name").value);
+	  formData.append("email", document.getElementById("email").value);
+	  formData.append("subject", document.getElementById("subject").value);
+	  formData.append("message", document.getElementById("message").value);
 		
   	  fetch("https://script.google.com/macros/s/AKfycbxcT_otD6TvCpiFMYuKv4-K7S9CECHFVd2KKPdcb32SSece7r_t9jR7_e91vebldKRo1A/exec", {
 	    method: "POST",
