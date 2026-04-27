@@ -1,4 +1,4 @@
-# Hey, This Is My Personal Website (www.sumit.co.in)
+# Hey, This Is My Personal Website (www.sumit.co.in) (sumitcoin.github.io/sumit.co.in)
 
 Welcome to my personal website (www.sumit.co.in)! This is a place where I showcase my projects, skills, and interests. 
 
