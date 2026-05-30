@@ -1,5845 +1,1460 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="icon" type="image/png" href="images/favicon.png">
-  <title>BrokerGenAI</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <!-- BOOTSTRAP ICON CDN -->
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sumit Singh | Java Full Stack Developer | sumit.co.in</title>
+  <meta name="description" content="Sumit Singh – Java Full Stack Developer specializing in Angular, Spring Boot, Azure, AWS, Docker & Kubernetes. Building scalable enterprise applications and cloud solutions." />
+  <meta name="keywords" content="Sumit Singh, Java Developer, Full Stack Developer, Angular, Spring Boot, Azure, AWS, Docker, Kubernetes, Portfolio" />
+  <meta name="author" content="Sumit Singh" />
+  <meta property="og:title" content="Sumit Singh | Java Full Stack Developer" />
+  <meta property="og:description" content="Passionate software developer building scalable enterprise applications, cloud solutions, and modern web interfaces." />
+  <meta property="og:url" content="https://sumit.co.in" />
+  <link rel="canonical" href="https://sumit.co.in" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-	html{
-		zoom:0.80;
-	}
+    :root {
+      --bg: #0a0a12;
+      --bg2: #0f0f1a;
+      --bg3: #14141f;
+      --surface: #1a1a2e;
+      --surface2: #1e1e35;
+      --border: rgba(120,120,200,0.12);
+      --border2: rgba(120,120,200,0.2);
+      --text: #e8e8f0;
+      --text2: #9898b8;
+      --text3: #6060a0;
+      --accent: #6c63ff;
+      --accent2: #a78bfa;
+      --accent3: #38bdf8;
+      --accent4: #f472b6;
+      --grad1: linear-gradient(135deg, #6c63ff 0%, #a78bfa 50%, #38bdf8 100%);
+      --grad2: linear-gradient(135deg, #1a1a35 0%, #0f0f22 100%);
+      --card-bg: rgba(26,26,46,0.7);
+      --nav-bg: rgba(10,10,18,0.85);
+      --shadow: 0 8px 40px rgba(108,99,255,0.15);
+      --shadow2: 0 2px 20px rgba(0,0,0,0.4);
+      --radius: 16px;
+      --radius2: 24px;
+      --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+    [data-theme="light"] {
+      --bg: #f4f4fb;
+      --bg2: #eeeef8;
+      --bg3: #e8e8f4;
+      --surface: #ffffff;
+      --surface2: #f8f8ff;
+      --border: rgba(108,99,255,0.12);
+      --border2: rgba(108,99,255,0.25);
+      --text: #1a1a2e;
+      --text2: #4a4a6a;
+      --text3: #8888aa;
+      --card-bg: rgba(255,255,255,0.9);
+      --nav-bg: rgba(244,244,251,0.9);
+      --shadow: 0 8px 40px rgba(108,99,255,0.12);
+      --shadow2: 0 2px 20px rgba(0,0,0,0.08);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+      transition: background var(--transition), color var(--transition);
+    }
+    ::selection { background: var(--accent); color: #fff; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
 
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:'Poppins',sans-serif;
+    /* ─── Noise overlay ─── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background-img: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      opacity: 0.4;
     }
 
-    /* BODY */
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      backdrop-filter: blur(20px) saturate(180%);
+      background: var(--nav-bg);
+      border-bottom: 1px solid var(--border);
+      transition: all var(--transition);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px;
+    }
+    .nav-logo {
+      font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.35rem;
+      background: var(--grad1); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
+    }
+    .nav-links { display: flex; gap: 0.25rem; align-items: center; }
+    .nav-links a {
+      font-size: 0.875rem; font-weight: 500; padding: 0.5rem 0.85rem;
+      border-radius: 8px; color: var(--text2); transition: all var(--transition);
+      letter-spacing: 0.01em;
+    }
+    .nav-links a:hover { color: var(--text); background: var(--surface); }
+    .nav-right { display: flex; gap: 0.75rem; align-items: center; }
+    .theme-btn {
+      width: 40px; height: 40px; border-radius: 10px; border: 1px solid var(--border2);
+      background: var(--surface); color: var(--text2); cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; transition: all var(--transition);
+    }
+    .theme-btn:hover { color: var(--accent); border-color: var(--accent); }
+    .nav-cta {
+      padding: 0.5rem 1.25rem; border-radius: 10px; font-size: 0.875rem; font-weight: 600;
+      background: var(--accent); color: #fff; transition: all var(--transition);
+      border: none; cursor: pointer;
+    }
+    .nav-cta:hover { background: var(--accent2); transform: translateY(-1px); box-shadow: 0 4px 20px rgba(108,99,255,0.4); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text2); border-radius: 2px; transition: all var(--transition); }
 
-	body{
-		background:#f5f9ff;
-		position:relative;
-		overflow-x:hidden;
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh; display: flex; align-items: center;
+      position: relative; overflow: hidden; padding: 8rem 2rem 4rem;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background: radial-gradient(ellipse 80% 60% at 60% 40%, rgba(108,99,255,0.18) 0%, transparent 60%),
+                  radial-gradient(ellipse 60% 60% at 20% 70%, rgba(56,189,248,0.1) 0%, transparent 60%),
+                  radial-gradient(ellipse 50% 50% at 80% 80%, rgba(244,114,182,0.08) 0%, transparent 60%);
+    }
+    .hero-grid {
+      position: absolute; inset: 0; z-index: 0; opacity: 0.04;
+      background-image: linear-gradient(var(--text) 1px, transparent 1px),
+                        linear-gradient(90deg, var(--text) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .hero-inner {
+      max-width: 1200px; margin: 0 auto; width: 100%; position: relative; z-index: 1;
+      display: grid; grid-template-columns: 1fr 420px; gap: 4rem; align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.35rem 1rem; border-radius: 50px;
+      background: rgba(108,99,255,0.12); border: 1px solid rgba(108,99,255,0.3);
+      font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--accent2);
+      margin-bottom: 1.5rem; animation: fadeUp 0.8s ease both;
+    }
+    .hero-badge::before { content: '●'; font-size: 0.5rem; animation: pulse 2s infinite; }
+	.hero-aka{font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:var(--text3);margin-bottom:1rem;animation:fadeUp 0.8s 0.15s ease both}
+    .hero-aka .aka-hl{color:var(--accent4)}
+   
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    .hero-title {
+	  font-family: 'Poppins', Arial, sans-serif;
+	  font-weight: 800;
+	  font-size: clamp(2.5rem, 5vw, 4rem);
+	  line-height: 1.2;
+	  letter-spacing: -0.5px;
 	}
+    .hero-title .name { background: var(--grad1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-subtitle {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;
+      color: var(--text2); margin-bottom: 1.25rem; line-height: 1.8;
+      animation: fadeUp 0.8s 0.2s ease both;
+    }
+    .hero-subtitle .tag {
+      display: inline-block; padding: 0.2rem 0.6rem; border-radius: 5px;
+      background: var(--surface); border: 1px solid var(--border2);
+      margin: 0.15rem; font-size: 0.78rem; color: var(--accent3);
+      transition: all var(--transition);
+    }
+    .hero-subtitle .tag:hover { background: var(--accent); color: #fff; border-color: var(--accent); transform: translateY(-2px); }
+    .hero-intro {
+      font-size: 1.05rem; color: var(--text2); max-width: 520px;
+      margin-bottom: 2rem; line-height: 1.75;
+      animation: fadeUp 0.8s 0.3s ease both;
+    }
+    .hero-btns {
+      display: flex; flex-wrap: wrap; gap: 1rem;
+      animation: fadeUp 0.8s 0.4s ease both;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.8rem 1.8rem; border-radius: 12px; font-size: 0.95rem;
+      font-weight: 600; cursor: pointer; transition: all var(--transition);
+      border: none; font-family: 'DM Sans', sans-serif;
+    }
+    .btn-primary {
+      background: var(--grad1); color: #fff;
+      box-shadow: 0 4px 20px rgba(108,99,255,0.4);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(108,99,255,0.5); }
+    .btn-outline {
+      background: transparent; color: var(--text);
+      border: 1.5px solid var(--border2);
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+    .btn-ghost {
+      background: var(--surface); color: var(--text2);
+      border: 1px solid var(--border);
+    }
+    .btn-ghost:hover { background: var(--surface2); color: var(--accent3); }
 
-	/* BACKGROUND GLOW */
+    /* Hero avatar */
+    .hero-visual { animation: fadeUp 0.8s 0.5s ease both; }
+    .avatar-wrap {
+      position: relative; width: 340px; height: 340px; margin: 0 auto;
+    }
+    .avatar-ring {
+      position: absolute; inset: -12px; border-radius: 50%;
+      background: conic-gradient(var(--accent), var(--accent2), var(--accent3), var(--accent4), var(--accent));
+      animation: spin 8s linear infinite;
+    }
+    .avatar-ring::before {
+      content: ''; position: absolute; inset: 3px; border-radius: 50%; background: var(--bg);
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .avatar-img {
+      position: absolute; inset: 6px; border-radius: 50%;
+      background: var(--surface);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; z-index: 1;
+      font-size: 6rem;
+    }
+    .avatar-blob {
+      position: absolute; width: 120px; height: 120px; border-radius: 50%;
+      background: var(--grad1); opacity: 0.25; filter: blur(40px);
+      animation: float 4s ease-in-out infinite;
+    }
+    .avatar-blob:nth-child(1) { top: -20px; right: -20px; }
+    .avatar-blob:nth-child(2) { bottom: -20px; left: -20px; animation-delay: -2s; background: var(--accent3); }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+    .hero-stats {
+      display: flex; gap: 1.5rem; margin-top: 2rem; justify-content: center;
+    }
+    .hero-stat {
+      text-align: center; padding: 0.75rem 1rem; border-radius: 12px;
+      background: var(--surface); border: 1px solid var(--border);
+    }
+    .hero-stat strong { display: block; font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--accent2); }
+    .hero-stat span { font-size: 0.72rem; color: var(--text3); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
 
-	body::before{
-		content:"";
-
-		position:absolute;
-
-		top:-250px;
-		right:-250px;
-
-		width:700px;
-		height:700px;
-
-		border-radius:50%;
-
-		background:radial-gradient(
-			circle,
-			rgba(37,99,235,0.18) 0%,
-			rgba(124,58,237,0.12) 35%,
-			transparent 70%
-		);
-
-		filter:blur(40px);
-
-		z-index:0;
-
-		pointer-events:none;
-	}
-
-    a{
-      text-decoration:none;
-      color:white;
+    /* ─── SECTIONS ─── */
+    section { padding: 6rem 2rem; position: relative; z-index: 1; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.78rem;
+      color: var(--accent); text-transform: uppercase; letter-spacing: 0.12em;
+      margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem;
+    }
+    .section-label::before { content:''; flex:0 0 30px; height:1px; background:var(--accent); }
+    .section-title {
+      font-family: 'Syne', sans-serif; font-weight: 800;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem); letter-spacing: -0.75px;
+      margin-bottom: 1rem; line-height: 1.15;
+    }
+    .section-title .hl { background: var(--grad1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .section-desc { color: var(--text2); font-size: 1.05rem; max-width: 560px; line-height: 1.75; }
+    .section-header { margin-bottom: 3.5rem; }
+    .divider {
+      height: 1px; background: var(--border);
+      margin: 0 2rem; position: relative; z-index: 1;
     }
 
-    .container{
-      width:90%;
-      max-width:1300px;
-      margin:auto;
+    /* ─── ABOUT ─── */
+    #about { background: var(--bg2); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;
+    }
+    .about-card {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: var(--radius2); padding: 2.5rem;
+      backdrop-filter: blur(10px); box-shadow: var(--shadow2);
+    }
+    .about-text p { color: var(--text2); margin-bottom: 1rem; font-size: 0.98rem; line-height: 1.8; }
+    .about-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+    .highlight-item {
+      padding: 1rem; border-radius: 12px; background: var(--surface);
+      border: 1px solid var(--border); transition: all var(--transition);
+    }
+    .highlight-item:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .highlight-item .icon { font-size: 1.5rem; margin-bottom: 0.4rem; }
+    .highlight-item strong { display: block; font-size: 0.85rem; font-weight: 700; color: var(--text); }
+    .highlight-item span { font-size: 0.78rem; color: var(--text3); }
+    .about-metrics { display: flex; flex-direction: column; gap: 1.5rem; }
+    .metric-card {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.75rem;
+      backdrop-filter: blur(10px);
+      display: flex; gap: 1.25rem; align-items: center;
+      transition: all var(--transition);
+    }
+    .metric-card:hover { border-color: var(--accent2); transform: translateX(4px); }
+    .metric-icon {
+      width: 52px; height: 52px; border-radius: 14px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; background: var(--surface); border: 1px solid var(--border);
+    }
+    .metric-info strong { display: block; font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--text); }
+    .metric-info span { font-size: 0.85rem; color: var(--text2); }
+
+    /* ─── SKILLS ─── */
+    #skills {}
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem; }
+    .skill-card {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.5rem 1.25rem;
+      text-align: center; backdrop-filter: blur(10px);
+      transition: all var(--transition); cursor: default;
+      position: relative; overflow: hidden;
+    }
+    .skill-card::before {
+      content: ''; position: absolute; inset: 0;
+      background: var(--grad1); opacity: 0; transition: opacity var(--transition);
+    }
+    .skill-card:hover { transform: translateY(-4px) scale(1.02); border-color: var(--accent); box-shadow: var(--shadow); }
+    .skill-card:hover::before { opacity: 0.06; }
+    .skill-card:hover .skill-icon { transform: scale(1.15) rotate(-5deg); }
+    .skill-icon { font-size: 2rem; margin-bottom: 0.6rem; display: block; transition: transform var(--transition); position: relative; z-index: 1; }
+    .skill-name { font-size: 0.82rem; font-weight: 600; color: var(--text); position: relative; z-index: 1; }
+    .skill-level {
+      margin-top: 0.5rem; height: 3px; background: var(--border);
+      border-radius: 3px; overflow: hidden; position: relative; z-index: 1;
+    }
+    .skill-level-bar {
+      height: 100%; border-radius: 3px; background: var(--grad1);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 1s cubic-bezier(0.4,0,0.2,1) 0.2s;
+    }
+    .skill-card.visible .skill-level-bar { transform: scaleX(1); }
+    .skill-cat-title {
+      font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem;
+      color: var(--text2); margin: 2rem 0 1rem;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .skill-cat-title::after { content:''; flex:1; height:1px; background: var(--border); }
+
+    /* ─── PROJECTS ─── */
+    #projects { background: var(--bg2); }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem; }
+    .project-card {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: var(--radius2); overflow: hidden;
+      backdrop-filter: blur(10px); transition: all var(--transition);
+      display: flex; flex-direction: column;
+    }
+    .project-card:hover { transform: translateY(-6px); border-color: var(--accent2); box-shadow: 0 20px 60px rgba(108,99,255,0.2); }
+    .project-img {
+      height: 200px; background: var(--surface);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 4rem; position: relative; overflow: hidden;
+    }
+    .project-img::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to bottom, transparent 50%, var(--card-bg) 100%);
+    }
+    .project-img-bg {
+      position: absolute; inset: 0; opacity: 0.15;
+      background-size: 30px 30px;
+      background-image: linear-gradient(var(--accent) 1px, transparent 1px),
+                        linear-gradient(90deg, var(--accent) 1px, transparent 1px);
+    }
+    .project-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.75rem; }
+    .project-tag {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.68rem;
+      padding: 0.2rem 0.55rem; border-radius: 5px;
+      background: var(--surface); border: 1px solid var(--border);
+      color: var(--accent3);
+    }
+    .project-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .project-desc { color: var(--text2); font-size: 0.87rem; line-height: 1.7; flex: 1; margin-bottom: 1.25rem; }
+    .project-actions { display: flex; gap: 0.75rem; }
+    .project-btn {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.82rem; font-weight: 600;
+      cursor: pointer; transition: all var(--transition); border: none;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .project-btn-primary { background: var(--accent); color: #fff; }
+    .project-btn-primary:hover { background: var(--accent2); transform: translateY(-1px); }
+    .project-btn-outline { background: transparent; color: var(--text2); border: 1px solid var(--border2); }
+    .project-btn-outline:hover { color: var(--text); border-color: var(--text2); }
+
+    /* ─── EXPERIENCE ─── */
+    #experience {}
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline::before {
+      content: ''; position: absolute; left: 0; top: 8px; bottom: 0;
+      width: 2px; background: linear-gradient(to bottom, var(--accent), var(--accent3), transparent);
+    }
+    .timeline-item {
+      position: relative; margin-bottom: 2.5rem;
+      padding-left: 2rem;
+    }
+    .timeline-item::before {
+      content: ''; position: absolute; left: -2rem; top: 8px;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--accent); border: 2px solid var(--bg);
+      box-shadow: 0 0 0 4px rgba(108,99,255,0.2);
+      transform: translateX(-5px);
+    }
+    .timeline-date {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.75rem;
+      color: var(--accent2); margin-bottom: 0.4rem;
+    }
+    .timeline-card {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.75rem;
+      backdrop-filter: blur(10px); transition: all var(--transition);
+    }
+    .timeline-card:hover { border-color: var(--accent); box-shadow: var(--shadow); }
+    .timeline-role { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.1rem; margin-bottom: 0.25rem; }
+    .timeline-company {
+      font-size: 0.9rem; color: var(--accent2); font-weight: 500; margin-bottom: 1rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .timeline-company::before { content: '📍'; font-size: 0.75rem; }
+    .timeline-desc { color: var(--text2); font-size: 0.88rem; line-height: 1.75; }
+    .timeline-desc li { margin-bottom: 0.4rem; padding-left: 0.5rem; list-style: none; position: relative; }
+    .timeline-desc li::before { content: '→'; color: var(--accent); margin-right: 0.5rem; }
+    .timeline-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+    .chip {
+      font-size: 0.72rem; padding: 0.2rem 0.6rem; border-radius: 5px;
+      background: rgba(108,99,255,0.1); border: 1px solid rgba(108,99,255,0.2);
+      color: var(--accent2); font-family: 'JetBrains Mono', monospace;
     }
 
-	.navbar{
-		width:100%;
-		height:70px;
+    /* ─── CERTS ─── */
+    #certifications { background: var(--bg2); }
+    .certs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem; }
+    .cert-card {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.75rem;
+      text-align: center; backdrop-filter: blur(10px);
+      transition: all var(--transition); position: relative; overflow: hidden;
+    }
+    .cert-card::after {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--grad1); transform: scaleX(0); transform-origin: left;
+      transition: transform var(--transition);
+    }
+    .cert-card:hover { transform: translateY(-4px); border-color: var(--accent2); }
+    .cert-card:hover::after { transform: scaleX(1); }
+    .cert-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+    .cert-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.95rem; margin-bottom: 0.3rem; }
+    .cert-provider { font-size: 0.78rem; color: var(--text3); font-family: 'JetBrains Mono', monospace; }
+    .cert-badge {
+      display: inline-block; margin-top: 0.75rem;
+      font-size: 0.68rem; padding: 0.2rem 0.6rem; border-radius: 50px;
+      background: rgba(108,99,255,0.12); border: 1px solid rgba(108,99,255,0.25);
+      color: var(--accent2);
+    }
 
-		background:rgba(255,255,255,0.85);
+    /* ─── CONTACT ─── */
+    #contact {}
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .contact-info { display: flex; flex-direction: column; gap: 1.25rem; }
+    .contact-item {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 1.25rem; border-radius: var(--radius);
+      background: var(--card-bg); border: 1px solid var(--border);
+      backdrop-filter: blur(10px); transition: all var(--transition);
+    }
+    .contact-item:hover { border-color: var(--accent); transform: translateX(4px); }
+    .contact-item-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: var(--surface); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .contact-item-text strong { display: block; font-size: 0.78rem; font-weight: 700; color: var(--text); text-transform: uppercase; letter-spacing: 0.05em; }
+    .contact-item-text a, .contact-item-text span { font-size: 0.9rem; color: var(--accent2); transition: color var(--transition); }
+    .contact-item-text a:hover { color: var(--accent); }
+    .contact-form { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius2); padding: 2rem; backdrop-filter: blur(10px); }
+    .contact-form h3 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.2rem; margin-bottom: 1.5rem; }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--text2); margin-bottom: 0.4rem; }
+    .form-group input, .form-group textarea {
+      width: 100%; padding: 0.75rem 1rem; border-radius: 10px;
+      background: var(--surface); border: 1px solid var(--border);
+      color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+      transition: all var(--transition); outline: none; resize: none;
+    }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(108,99,255,0.12); }
+    .form-group textarea { min-height: 120px; }
+    .form-submit {
+      width: 100%; padding: 0.85rem; border-radius: 10px; border: none;
+      background: var(--grad1); color: #fff; font-size: 0.95rem; font-weight: 700;
+      cursor: pointer; transition: all var(--transition); font-family: 'DM Sans', sans-serif;
+    }
+    .form-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(108,99,255,0.5); }
 
-		backdrop-filter:blur(14px);
-
-		border-bottom:1px solid #e5edf8;
-
-		padding:0 50px;
-
-		display:flex;
-		align-items:center;
-		justify-content:space-between;
-
-		position:sticky;
-		top:0;
-
-		z-index:999;
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--bg3); border-top: 1px solid var(--border);
+      padding: 2.5rem 2rem; position: relative; z-index: 1;
+    }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: gap;
+      gap: 1rem;
+    }
+    .footer-logo { font-family: 'Poppins', Arial, sans-serif; font-weight: 800; font-size: 1.1rem; background: var(--grad1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .footer-domain { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--text3); margin-top: 0.15rem; }
+    .footer-socials {
+	  display: flex;
+	  gap: 14px;
 	}
 
-	.logo-wrapper{
-		display:flex;
-		align-items:center;
-		gap:10px;
-	}
-
-	.logo-img{
-		width:50px;
-		display:block;
-	}
-
-	.logo-text{
-		color:#0f172a;
-		font-size:35px;
-		font-weight:700;
-	}
-
-	.logo-text span{
-		background:linear-gradient(
-			90deg,
-			#00bfff,
-			#7a5cff,
-			#9f4dff
-		);
-
-		-webkit-background-clip:text;
-		-webkit-text-fill-color:transparent;
-	}
-
-	.nav-links{
-		display:flex;
-		align-items:center;
-		gap:40px;
-		list-style:none;
-	}
-
-	.nav-links li{
-		position:relative;
-	}
-
-	.nav-links li a{
-		color:#1e293b;
-		text-decoration:none;
-		font-size:16px;
-		font-weight:600;
-
-		display:flex;
-		align-items:center;
-		gap:5px;
-
-		transition:0.3s;
-	}
-
-	.nav-links li a:hover{
-		color:#2563eb;
-	}
-
-	/* =========================
-	   DROPDOWN
-	========================= */
-
-	.dropdown:hover .mega-menu{
-		opacity:1;
-		visibility:visible;
-		transform:translateY(0);
-	}
-
-	.dropdown:hover .small-dropdown{
-		opacity:1;
-		visibility:visible;
-		transform:translateY(0);
-	}
-
-	/* =========================
-	   MEGA MENU
-	========================= */
-
-	.mega-menu{
-		position:absolute;
-		top:70px;
-		left:-250px;
-
-		width:850px;
-
-		background:white;
-		border-radius:18px;
-
-		padding:35px;
-
-		box-shadow:
-		0 20px 60px rgba(0,0,0,0.18);
-
-		opacity:0;
-		visibility:hidden;
-
-		transform:translateY(15px);
-
-		transition:0.3s ease;
-	}
-
-	/* TITLE */
-
-	.mega-menu h3{
-		color:#111;
-		margin-bottom:30px;
-		font-size:28px;
-	}
-
-	/* GRID */
-
-	.mega-grid{
-		display:grid;
-		grid-template-columns:1fr 1fr;
-		gap:30px;
-	}
-
-	/* ITEM */
-
-	.mega-item{
-		display:flex;
-		gap:18px;
-	}
-
-	.icon{
-		width:50px;
-		height:50px;
-
-		border-radius:14px;
-
-		background:#f2f7ff;
-
-		display:flex;
-		align-items:center;
-		justify-content:center;
-
-		font-size:24px;
-	}
-
-	.mega-item h4{
-		color:#111;
-		margin-bottom:8px;
-		font-size:19px;
-	}
-
-	.mega-item p{
-		color:#666;
-		line-height:1.6;
-		font-size:15px;
-	}
-
-	/* =========================
-	   SMALL DROPDOWN
-	========================= */
-
-	.small-dropdown{
-		position:absolute;
-		top:60px;
-		left:0;
-
-		width:230px;
-
-		background:white;
-		border-radius:14px;
-
-		padding:15px 0;
-
-		box-shadow:
-		0 15px 40px rgba(0,0,0,0.18);
-
-		opacity:0;
-		visibility:hidden;
-
-		transform:translateY(15px);
-
-		transition:0.3s ease;
-	}
-
-	.small-dropdown a{
-		display:block;
-		padding:14px 22px;
-		color:#111 !important;
-	}
-
-	.small-dropdown a:hover{
-		background:#f3f7ff;
-	}
-
-	/* =========================
-	   BUTTONS
-	========================= */
-
-	.nav-buttons{
-		display:flex;
-		gap:15px;
-	}
-
-	.login-btn{
-		padding:12px 24px;
-
-		border-radius:12px;
-
-		border:1px solid #cbd5e1;
-
-		background:white;
-
-		color:#0f172a;
-
-		font-weight:600;
-
-		cursor:pointer;
+	.social-btn {
+	  width: 44px;
+	  height: 44px;
+	  border-radius: 50%;
+	  background: #ffffff;
+	  color: #1e293b;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  font-size: 18px;
+	  text-decoration: none;
+	  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+	  transition: all 0.3s ease;
 	}
 	
-	.white-btn{
-		color:#0f172a;
-		cursor:pointer;
-	}
-
-	.register-btn{
-		padding:12px 24px;
-
-		border:none;
-
-		border-radius:10px;
-
-		background:linear-gradient(
-			90deg,
-			#00bfff,
-			#7a5cff
-		);
-
-		color:white;
-
-		font-weight:700;
-
-		cursor:pointer;
-	}
-
-	/* =========================
-	   RESPONSIVE
-	========================= */
-
-	@media(max-width:1200px){
-
-		.mega-menu{
-			width:700px;
-			left:-180px;
-		}
-
-	}
-
-	@media(max-width:992px){
-
-		.nav-links{
-			display:none;
-		}
-		
-		.logo-text{
-			color:#0f172a;
-			font-size:15px;
-			font-weight:500;
-		}
-	}
-	.dropdown-icon{
-		width:16px;
-		height:16px;
-
-		transition:0.3s ease;
-	}
-
-	/* ROTATE ON HOVER */
-
-	.dropdown:hover .dropdown-icon{
-		transform:rotate(180deg);
-	}
-
-
-    /* HERO */
-	/* =========================
-	   HERO SLIDER
-	========================= */
-
-	.hero-slider{
-		position:relative;
-
-		width:100%;
-		max-width:650px;
-
-		height:600px;
-
-		border-radius:35px;
-
-		overflow:hidden;
-
-		box-shadow:
-		0 20px 60px rgba(0,0,0,0.35);
-
-		border:1px solid rgba(255,255,255,0.08);
-	}
-
-	/* SLIDES */
-
-	.slides{
-		display:none;
-		width:100%;
-		height:100%;
-	}
-
-	.slides img{
-		width:100%;
-		height:100%;
-		object-fit:cover;
-		display:block;
-	}
-
-	/* ACTIVE SLIDE */
-
-	.slides:first-child{
-		display:block;
-	}
-
-	/* FADE EFFECT */
-
-	.fade{
-		animation:fadeEffect 1s ease;
-	}
-
-	@keyframes fadeEffect{
-
-		from{
-			opacity:0.4;
-		}
-
-		to{
-			opacity:1;
-		}
-
-	}
-
-	/* NAVIGATION BUTTONS */
-
-	.prev,
-	.next{
-		position:absolute;
-		top:50%;
-		transform:translateY(-50%);
-
-		width:48px;
-		height:48px;
-
-		border:none;
-		border-radius:50%;
-
-		background:rgba(0,0,0,0.45);
-
-		color:white;
-
-		font-size:22px;
-
-		cursor:pointer;
-
-		z-index:10;
-
-		transition:0.3s;
-	}
-
-	.prev:hover,
-	.next:hover{
-		background:#00bfff;
-	}
-
-	.prev{
-		left:20px;
-	}
-
-	.next{
-		right:20px;
-	}
-
-	/* DOTS */
-
-	.dots-container{
-		position:absolute;
-		bottom:22px;
-		width:100%;
-
-		display:flex;
-		justify-content:center;
-		gap:12px;
-	}
-
-	.dot{
-		width:12px;
-		height:12px;
-
-		border-radius:50%;
-
-		background:rgba(255,255,255,0.45);
-
-		cursor:pointer;
-
-		transition:0.3s;
-	}
-
-	.dot.active{
-		width:35px;
-		border-radius:20px;
-
-		background:linear-gradient(
-			90deg,
-			#00bfff,
-			#7a5cff
-		);
-	}
-
-	/* RESPONSIVE */
-
-	@media(max-width:992px){
-
-		.hero-slider{
-			max-width:100%;
-			height:500px;
-		}
-
-	}
-
-	@media(max-width:600px){
-
-		.hero-slider{
-			height:350px;
-			border-radius:25px;
-		}
-
-		.prev,
-		.next{
-			width:40px;
-			height:40px;
-		}
-
-	}
-
-    .hero{
-		display:flex;
-		align-items:center;
-		justify-content:space-between;
-
-		min-height:90vh;
-
-		gap:70px;
-
-		padding-top:40px;
-	}
-
-    .hero-left{
-      flex:1;
+    .social-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+    .footer-copy { font-size: 0.8rem; color: var(--text3); text-align: right; }
+    .footer-copy span { color: var(--accent2); }
+
+    /* ─── SCROLL REVEAL ─── */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ─── BACK TO TOP ─── */
+    .back-top {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 99;
+      width: 44px; height: 44px; border-radius: 12px;
+      background: var(--accent); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; cursor: pointer; border: none;
+      box-shadow: 0 4px 20px rgba(108,99,255,0.4);
+      transition: all var(--transition);
+      opacity: 0; pointer-events: none;
     }
+    .back-top.show { opacity: 1; pointer-events: all; }
+    .back-top:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(108,99,255,0.5); }
 
-    .hero-left h1{
-		font-size:76px;
-		line-height:1.05;
-		margin-bottom:25px;
-		color:#0f172a;
-		font-weight:800;
-	}
-
-    .hero-left h1 span{
-      background:linear-gradient(90deg,#00D2FF,#9C27FF);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
+    /* ─── MOBILE NAV ─── */
+    .mobile-nav {
+      position: fixed; top: 68px; left: 0; right: 0; z-index: 99;
+      background: var(--nav-bg); backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: none; flex-direction: column; gap: 0.5rem;
+      transform: translateY(-10px); opacity: 0;
+      transition: all var(--transition);
     }
-
-    .hero-left p{
-		color:#475569;
-		line-height:1.9;
-		font-size:18px;
-		margin-bottom:35px;
-		max-width:650px;
-	}
-
-    .hero-buttons{
-      display:flex;
-      gap:20px;
-      margin-bottom:40px;
+    .mobile-nav.open { transform: translateY(0); opacity: 1; }
+    .mobile-nav a {
+      padding: 0.65rem 1rem; border-radius: 8px; font-size: 0.9rem;
+      font-weight: 500; color: var(--text2); transition: all var(--transition);
     }
+    .mobile-nav a:hover { background: var(--surface); color: var(--text); }
 
-    .btn-primary{
-      background:linear-gradient(90deg,#00D2FF,#7A5FFF);
-      padding:16px 30px;
-      border-radius:14px;
-      font-weight:600;
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-visual { order: -1; }
+      .avatar-wrap { width: 260px; height: 260px; }
+      .hero-title { font-size: clamp(2rem, 6vw, 3rem); }
+      .about-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
     }
-
-    .btn-secondary{
-      border:1px solid #2b3552;
-      padding:16px 30px;
-      border-radius:14px;
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .mobile-nav { display: flex; }
+      .hero-btns { gap: 0.75rem; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+      .footer-copy { text-align: left; }
+      section { padding: 4rem 1.25rem; }
     }
-
-    .search-box{
-		background:white;
-
-		border:1px solid #dbe7f5;
-
-		border-radius:22px;
-
-		padding:18px;
-
-		display:flex;
-		gap:15px;
-
-		max-width:700px;
-
-		box-shadow:
-		0 10px 30px rgba(0,0,0,0.05);
-	}
-
-	.search-box input{
-		width:100%;
-		background:none;
-		border:none;
-		outline:none;
-
-		color:#111827;
-		font-size:16px;
-	}
-
-    .search-btn{
-      background:linear-gradient(90deg,#00D2FF,#7A5FFF);
-      border:none;
-      color:white;
-      padding:14px 25px;
-      border-radius:12px;
-      cursor:pointer;
-      font-weight:600;
-    }
-
-    .hero-right{
-      flex:1;
-      position:relative;
-    }
-
-    .hero-card{
-      background:#121d35;
-      border:1px solid #223056;
-      border-radius:30px;
-      overflow:hidden;
-      box-shadow:0 20px 80px rgba(0,0,0,0.4);
-    }
-
-    .hero-card img{
-      width:100%;
-      height:600px;
-      object-fit:cover;
-    }
-
-    /* STATS */
-
-    /* =========================
-   STATS SECTION
-	========================= */
-
-	.stats{
-		display:grid;
-
-		grid-template-columns:
-		repeat(4, 1fr);
-
-		gap:25px;
-
-		margin:100px 0;
-	}
-
-	/* CARD */
-
-	.stat-card{
-		background:white;
-
-		border:1px solid #e7eef8;
-
-		border-radius:24px;
-
-		padding:40px 20px;
-
-		text-align:center;
-
-		box-shadow:
-		0 10px 30px rgba(0,0,0,0.05);
-
-		transition:0.3s ease;
-	}
-
-	/* HOVER */
-
-	.stat-card:hover{
-		transform:translateY(-8px);
-
-		box-shadow:
-		0 20px 40px rgba(37,99,235,0.12);
-	}
-
-	/* NUMBER */
-
-	.stat-card h2{
-		font-size:48px;
-
-		font-weight:800;
-
-		margin-bottom:12px;
-
-		background:linear-gradient(
-			90deg,
-			#2563eb,
-			#7c3aed
-		);
-
-		-webkit-background-clip:text;
-		-webkit-text-fill-color:transparent;
-	}
-
-	/* TEXT */
-
-	.stat-card p{
-		color:#64748b;
-
-		font-size:16px;
-
-		font-weight:500;
-	}
-
-    /* SECTION */
-
-    .section-title{
-      text-align:center;
-      margin-bottom:60px;
-    }
-
-    .section-title h2{
-      font-size:48px;
-      margin-bottom:15px;
-    }
-
-    .section-title p{
-      color:#bdbdbd;
-    }
-
-    /* PROPERTY */
-
-    .property-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:30px;
-      margin-bottom:100px;
-    }
-
-    /* MOBILE APP SECTION */
-
-	/* =========================
-	   MOBILE APP SECTION
-	========================= */
-
-	.mobile-app{
-		display:flex;
-		align-items:center;
-		justify-content:space-between;
-
-		gap:80px;
-
-		margin:120px auto;
-
-		padding:70px;
-
-		background:white;
-
-		border-radius:40px;
-
-		border:1px solid #e7eef8;
-
-		box-shadow:
-		0 20px 60px rgba(0,0,0,0.05);
-
-		overflow:hidden;
-
-		position:relative;
-	}
-
-	/* SOFT GLOW */
-
-	.mobile-app::before{
-		content:'';
-
-		position:absolute;
-
-		width:500px;
-		height:500px;
-
-		background:
-		radial-gradient(
-			circle,
-			rgba(37,99,235,0.10),
-			transparent
-		);
-
-		top:-180px;
-		right:-120px;
-
-		border-radius:50%;
-
-		filter:blur(60px);
-	}
-
-	/* =========================
-	   LEFT CONTENT
-	========================= */
-
-	.mobile-left{
-		flex:1;
-		max-width:560px;
-		position:relative;
-		z-index:2;
-	}
-
-	.mobile-tag{
-		display:inline-flex;
-
-		align-items:center;
-
-		padding:10px 18px;
-
-		border-radius:30px;
-
-		background:#eff6ff;
-
-		color:#2563eb;
-
-		font-size:14px;
-
-		font-weight:600;
-
-		margin-bottom:25px;
-	}
-
-	.mobile-left h2{
-		font-size:64px;
-
-		line-height:1.08;
-
-		color:#0f172a;
-
-		margin-bottom:28px;
-
-		font-weight:800;
-	}
-
-	.mobile-left p{
-		color:#64748b;
-
-		line-height:1.9;
-
-		font-size:18px;
-
-		margin-bottom:35px;
-	}
-
-	/* =========================
-	   FEATURES
-	========================= */
-
-	.mobile-features{
-		display:grid;
-
-		grid-template-columns:
-		repeat(2,1fr);
-
-		gap:18px;
-
-		margin-bottom:40px;
-	}
-
-	.feature-box{
-		background:#f8fbff;
-
-		border:1px solid #dbeafe;
-
-		padding:18px 20px;
-
-		border-radius:18px;
-
-		color:#0f172a;
-
-		font-weight:500;
-
-		transition:0.3s;
-	}
-
-	.feature-box:hover{
-		transform:translateY(-4px);
-
-		box-shadow:
-		0 10px 25px rgba(37,99,235,0.08);
-	}
-
-	/* =========================
-	   STORE BUTTONS
-	========================= */
-
-	.download-buttons{
-		display:flex;
-		gap:20px;
-		flex-wrap:wrap;
-	}
-
-	.store-btn{
-		display:flex;
-		align-items:center;
-		gap:14px;
-
-		background:#0f172a;
-
-		color:white;
-
-		padding:16px 24px;
-
-		border-radius:18px;
-
-		transition:0.3s;
-
-		border:none;
-	}
-
-	.store-btn:hover{
-		transform:translateY(-5px);
-	}
-
-	.store-btn img{
-		width:38px;
-	}
-
-	.store-btn small{
-		display:block;
-		font-size:11px;
-		opacity:0.7;
-	}
-
-	.store-btn strong{
-		font-size:18px;
-	}
-
-	/* =========================
-	   PHONE MOCKUPS
-	========================= */
-
-	.mobile-right{
-		flex:1;
-
-		display:flex;
-		justify-content:center;
-		align-items:center;
-
-		position:relative;
-
-		min-height:650px;
-	}
-
-	/* PHONE CONTAINER */
-
-	.phones{
-		position:relative;
-
-		width:500px;
-		height:600px;
-	}
-
-	/* PHONE IMAGE */
-
-	.phone-back,
-	.phone-front{
-		position:absolute;
-
-		width:260px;
-		height:auto;
-
-		object-fit:contain;
-
-		filter:
-		drop-shadow(
-			0 25px 50px rgba(0,0,0,0.18)
-		);
-
-		transition:0.4s ease;
-	}
-
-	/* BACK PHONE */
-
-	.phone-back{
-		left:40px;
-		top:40px;
-
-		transform:
-		rotate(-12deg);
-	}
-
-	/* FRONT PHONE */
-
-	.phone-front{
-		right:20px;
-		top:90px;
-
-		transform:
-		rotate(10deg);
-	}
-
-	/* HOVER EFFECT */
-
-	.mobile-app:hover .phone-back{
-		transform:
-		rotate(-8deg)
-		translateY(-10px);
-	}
-
-	.mobile-app:hover .phone-front{
-		transform:
-		rotate(6deg)
-		translateY(-10px);
-	}
-
-	/* =========================
-	   RESPONSIVE
-	========================= */
-
-	@media(max-width:1100px){
-
-		.mobile-app{
-			flex-direction:column;
-			text-align:center;
-		}
-
-		.mobile-left{
-			max-width:100%;
-		}
-
-		.mobile-features{
-			grid-template-columns:1fr 1fr;
-		}
-
-		.download-buttons{
-			justify-content:center;
-		}
-
-	}
-
-	@media(max-width:768px){
-
-		.mobile-app{
-			padding:40px 25px;
-		}
-
-		.mobile-left h2{
-			font-size:42px;
-		}
-
-		.mobile-right{
-			min-height:480px;
-		}
-
-		.phones{
-			width:320px;
-			height:420px;
-		}
-
-		.phone-back,
-		.phone-front{
-			width:170px;
-		}
-
-		.phone-back{
-			left:10px;
-		}
-
-		.phone-front{
-			right:10px;
-		}
-
-	}
-
-	@media(max-width:560px){
-
-		.mobile-features{
-			grid-template-columns:1fr;
-		}
-
-		.mobile-left h2{
-			font-size:34px;
-		}
-
-	}
-
-    /* FEEDBACK */
-
-    .feedback-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-      gap:30px;
-      margin-bottom:120px;
-    }
-
-    .stars{
-      color:#FFD700;
-      font-size:24px;
-      margin-bottom:20px;
+    @media (max-width: 480px) {
+      .about-highlights { grid-template-columns: 1fr; }
+      .certs-grid { grid-template-columns: 1fr 1fr; }
+      .hero-stats { gap: 0.75rem; }
     }
 	
-	.feedback-card{
-		background:white;
+	 /* EDUCATION & AWARDS */
+    .ea-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+    .ea-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius2);padding:1.9rem;backdrop-filter:blur(10px)}
+    .ea-head{font-family:'Syne',sans-serif;font-weight:700;font-size:0.98rem;margin-bottom:1.4rem;display:flex;align-items:center;gap:0.55rem;color:var(--accent2)}
+    .ea-item{padding:0.85rem 0;border-bottom:1px solid var(--border);display:flex;gap:0.9rem;align-items:flex-start}
+    .ea-item:last-child{border-bottom:none;padding-bottom:0}
+    .ea-icon{width:36px;height:36px;border-radius:10px;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:0.95rem;flex-shrink:0}
+    .ea-text strong{display:block;font-size:0.85rem;font-weight:700;color:var(--text);margin-bottom:0.18rem}
+    .ea-text span{font-size:0.76rem;color:var(--text3)}
+    .ea-yr{font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--accent2);display:block;margin-top:0.15rem}
+    .award-badge{display:inline-block;margin-top:0.28rem;font-size:0.66rem;padding:0.16rem 0.52rem;border-radius:50px;background:rgba(244,114,182,0.1);border:1px solid rgba(244,114,182,0.25);color:var(--accent4)}
 
-		border:1px solid #e7eef8;
-
-		border-radius:24px;
-
-		padding:35px;
-
-		box-shadow:
-		0 10px 30px rgba(0,0,0,0.04);
-	}
-
-	.feedback-card p{
-		color:#475569;
-	}
-
-    .user{
-      display:flex;
-      align-items:center;
-      gap:15px;
-    }
-
-    .user img{
-      width:55px;
-      height:55px;
-      border-radius:50%;
-    }
-
-    /* =========================
-   FOOTER
-========================= */
-
-.footer{
-    padding:90px 0 35px;
-
-    background:white;
-
-    margin-top:120px;
-}
-
-/* CONTAINER */
-
-.footer-container{
-	width: 80%;
-    margin: auto;
-    display:grid;
-
-    grid-template-columns:
-    320px 1fr;
-
-    gap:80px;
-
-    align-items:flex-start;
-}
-
-/* =========================
-   LOGO
-========================= */
-
-.footer-logo{
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    background: linear-gradient(90deg, #00D2FF, #9C27FF);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* LOGO COLOR */
-
-.footer-logo span{
-    background:
-    linear-gradient(
-        90deg,
-        #00c6ff,
-        #2563eb,
-        #7c3aed
-    );
-
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-/* TEXT */
-
-.footer-about p{
-    color:#64748b;
-	line-height:1.8;
-
-    margin-bottom:30px;
-}
-
-/* QR */
-
-.qr-code{
-    width:150px;
-}
-
-/* =========================
-   RIGHT AREA
-========================= */
-
-.footer-right-wrapper{
-    width:100%;
-}
-
-/* =========================
-   LINKS
-========================= */
-
-.footer-links{
-    display:grid;
-
-    grid-template-columns:
-    repeat(4,1fr);
-
-    gap:50px;
-
-    margin-bottom:10px;
-}
-
-/* COLUMN */
-
-.footer-column h4{
-     margin-bottom:25px;
-}
-
-/* LINKS */
-
-.footer-column a{
-    display:block;
-
-	color:#64748b;
-
-	margin-bottom:14px;
-
-	transition:0.3s;
-}
-
-.footer-column a:hover{
-    color:#2563eb;
-
-    transform:
-    translateX(5px);
-}
-
-/* =========================
-   DOWNLOAD
-========================= */
-
-.footer-download{
-    margin-bottom:40px;
-}
-
-/* TITLE */
-
-.footer-download h3,
-.footer-social h3{
-    font-size:25px;
-
-    font-weight:800;
-
-    margin-bottom:5px;
-
-    color:#0f172a;
-}
-
-/* BUTTONS */
-
-.app-buttons{
-    display:flex;
-
-    gap:25px;
-
-    flex-wrap:wrap;
-}
-
-/* BUTTON */
-
-.app-btn{
-    width: 282px;
-    padding: 4px 29px;
-    border-radius: 24px;
-    background: #081028;
-    color: white;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    transition: 0.35s ease;
-}
-
-/* ICON */
-
-.app-btn i{
-    font-size:52px;
-}
-
-/* SMALL TEXT */
-
-.app-btn span{
-    display:block;
-
-    font-size:13px;
-
-    opacity:0.7;
-
-    margin-bottom:4px;
-
-    letter-spacing:1px;
-}
-
-/* TITLE */
-
-.app-btn strong{
-    font-size:29px;
-
-    font-weight:700;
-}
-
-/* HOVER */
-
-.app-btn:hover{
-    transform:
-    translateY(-8px);
-
-    background:
-    linear-gradient(
-        135deg,
-        #2563eb,
-        #7c3aed
-    );
-
-    box-shadow:
-    0 20px 50px rgba(37,99,235,0.25);
-}
-
-/* =========================
-   SOCIAL
-========================= */
-
-.social-icons{
-    display:flex;
-
-    gap:18px;
-}
-
-/* ICON */
-
-.social-icons a{
-    width:52px;
-    height:52px;
-
-    border-radius:18px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:white;
-
-    border:1px solid #dbe7f5;
-
-    color:#2563eb;
-
-    text-decoration:none;
-
-    font-size:28px;
-
-    transition:0.35s ease;
-}
-
-/* HOVER */
-
-.social-icons a:hover{
-    transform:
-    translateY(-4px);
-
-    background:
-    linear-gradient(
-        135deg,
-        #2563eb,
-        #7c3aed
-    );
-
-    color:white;
-
-    box-shadow:
-    0 15px 35px rgba(37,99,235,0.20);
-}
-
-/* =========================
-   BOTTOM
-========================= */
-
-.footer-bottom{
-    margin-top:30px;
-
-    padding-top:30px;
-
-    border-top:1px solid #dbe7f5;
-
-    text-align:center;
-
-    color:#94a3b8;
-	
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media(max-width:1200px){
-
-    .footer-container{
-        grid-template-columns:1fr;
-    }
-
-    .footer-links{
-        grid-template-columns:
-        repeat(2,1fr);
-    }
-
-}
-
-@media(max-width:768px){
-
-    .footer-links{
-        grid-template-columns:1fr;
-    }
-
-    .footer-download h3,
-    .footer-social h3{
-        font-size:28px;
-    }
-
-    .app-btn{
-        width:100%;
-    }
-
-}
-
-    /* RESPONSIVE */
-
-    @media(max-width:992px){
-
-      .hero,
-      .mobile-app{
-        flex-direction:column;
-      }
-
-      .hero-left h1{
-        font-size:52px;
-      }
-
-      .stats{
-        grid-template-columns:repeat(2,1fr);
-      }
-
-      .footer-grid{
-        grid-template-columns:1fr 1fr;
-      }
-
-      .nav-links{
-        display:none;
-      }
-    }
-
-    @media(max-width:600px){
-
-      .hero-left h1{
-        font-size:40px;
-      }
-
-      .stats{
-        grid-template-columns:1fr;
-      }
-
-      .footer-grid{
-        grid-template-columns:1fr;
-      }
-
-      .search-box{
-        flex-direction:column;
-      }
-
-      .search-btn{
-        width:100%;
-      }
-
-      .hero-buttons{
-        flex-direction:column;
-      }
-
-      .mobile-app{
-        padding:35px;
-      }
-    }
-
-	/* ===================================
-	   GLOBAL PREMIUM HOVER EFFECTS
-	=================================== */
-	/* SMOOTH TRANSITION */
-
-	button,
-	a,
-	.property-card,
-	.stat-card,
-	.feature-box,
-	.feedback-card,
-	.store-btn,
-	.search-btn,
-	.login-btn,
-	.register-btn,
-	.btn-primary,
-	.btn-secondary{
-		transition:
-		all 0.35s ease;
-	}
-
-	/* ===================================
-	   PRIMARY BUTTON
-	=================================== */
-
-	.btn-primary:hover{
-		transform:
-		translateY(-4px)
-		scale(1.03);
-
-		box-shadow:
-		0 15px 35px rgba(37,99,235,0.35);
-
-		filter:brightness(1.05);
-	}
-
-	/* ===================================
-	   SECONDARY BUTTON
-	=================================== */
-
-	.btn-secondary:hover{
-		background:#eff6ff;
-
-		border-color:#2563eb;
-
-		color:#2563eb;
-
-		transform:
-		translateY(-4px);
-
-		box-shadow:
-		0 12px 28px rgba(37,99,235,0.12);
-	}
-
-	/* ===================================
-	   LOGIN BUTTON
-	=================================== */
-
-	.login-btn:hover{
-		background:#0f172a;
-
-		color:white;
-
-		transform:
-		translateY(-3px);
-
-		box-shadow:
-		0 12px 30px rgba(15,23,42,0.2);
-	}
-
-	/* ===================================
-	   REGISTER BUTTON
-	=================================== */
-
-	.register-btn:hover{
-		transform:
-		translateY(-4px)
-		scale(1.04);
-
-		box-shadow:
-		0 15px 35px rgba(124,58,237,0.28);
-
-		filter:brightness(1.05);
-	}
-
-	/* ===================================
-	   SEARCH BUTTON
-	=================================== */
-
-	.search-btn:hover{
-		transform:
-		scale(1.05);
-
-		box-shadow:
-		0 12px 30px rgba(37,99,235,0.28);
-	}
-
-	/* ===================================
-	   STORE BUTTON
-	=================================== */
-
-	.store-btn:hover{
-		transform:
-		translateY(-6px)
-		scale(1.03);
-
-		box-shadow:
-		0 18px 40px rgba(15,23,42,0.18);
-	}
-
-	/* ===================================
-	   FEATURE BOX
-	=================================== */
-
-	.feature-box:hover{
-		transform:
-		translateY(-5px);
-
-		border-color:#93c5fd;
-
-		background:#ffffff;
-
-		box-shadow:
-		0 12px 30px rgba(37,99,235,0.08);
-	}
-
-	
-
-	/* ===================================
-	   STATS CARD
-	=================================== */
-
-	.stat-card:hover{
-		transform:
-		translateY(-8px)
-		scale(1.02);
-
-		box-shadow:
-		0 20px 40px rgba(37,99,235,0.12);
-	}
-
-	/* ===================================
-	   FEEDBACK CARD
-	=================================== */
-
-	.feedback-card:hover{
-		transform:
-		translateY(-8px);
-
-		box-shadow:
-		0 18px 40px rgba(0,0,0,0.08);
-	}
-
-	/* ===================================
-	   NAV LINKS
-	=================================== */
-
-	.nav-links li a{
-		position:relative;
-	}
-
-	/* UNDERLINE EFFECT */
-
-	.nav-links li a::after{
-		content:'';
-
-		position:absolute;
-
-		left:0;
-		bottom:-6px;
-
-		width:0%;
-		height:3px;
-
-		border-radius:20px;
-
-		background:linear-gradient(
-			90deg,
-			#2563eb,
-			#7c3aed
-		);
-
-		transition:0.35s ease;
-	}
-
-	.nav-links li a:hover::after{
-		width:100%;
-	}
-
-	/* ===================================
-	   DROPDOWN ITEMS
-	=================================== */
-
-	.small-dropdown a:hover{
-		padding-left:28px;
-
-		background:#eff6ff;
-
-		color:#2563eb !important;
-	}
-
-	/* ===================================
-	   SOCIAL / FOOTER LINKS
-	=================================== */
-
-	.footer-links a:hover{
-		transform:translateX(6px);
-	}
-
-	/* ===================================
-	   PHONE MOCKUPS
-	=================================== */
-
-	.phone-back,
-	.phone-front{
-		transition:0.5s ease;
-	}
-
-	.mobile-app:hover .phone-back{
-		transform:
-		rotate(-8deg)
-		translateY(-12px)
-		scale(1.02);
-	}
-
-	.mobile-app:hover .phone-front{
-		transform:
-		rotate(6deg)
-		translateY(-12px)
-		scale(1.02);
-	}
-	
-	
-	
-	/* =========================
-    DOWNLOAD DROPDOWN
-	========================= */
-
-	.download-dropdown{
-		position:absolute;
-
-		top:70px;
-		right:-120px;
-
-		width:700px;
-
-		background:white;
-
-		border-radius:24px;
-
-		padding:28px;
-
-		display:flex;
-
-		gap:30px;
-
-		box-shadow:
-		0 25px 60px rgba(0,0,0,0.12);
-
-		opacity:0;
-		visibility:hidden;
-
-		transform:
-		translateY(15px);
-
-		transition:0.35s ease;
-
-		z-index:999;
-	}
-
-	/* SHOW */
-
-	.dropdown:hover .download-dropdown{
-		opacity:1;
-		visibility:visible;
-
-		transform:
-		translateY(0);
-	}
-
-	/* =========================
-	   LEFT
-	========================= */
-
-	.download-left{
-		width:250px;
-	}
-
-	.download-left h3{
-		font-size:30px;
-
-		line-height:1.2;
-
-		margin-bottom:25px;
-
-		color:#0f172a;
-	}
-
-	/* STORE BUTTON */
-
-	.store-download{
-		display:flex;
-
-		align-items:center;
-
-		gap:15px;
-
-		padding:18px;
-
-		margin-bottom:18px;
-
-		border-radius:18px;
-
-		border:1px solid #e2e8f0;
-
-		background:#f8fbff;
-
-		transition:0.3s ease;
-	}
-
-	.store-download:hover{
-		transform:
-		translateY(-5px);
-
-		border-color:#60a5fa;
-
-		box-shadow:
-		0 12px 30px rgba(37,99,235,0.08);
-	}
-
-	.store-download img{
-		width:42px;
-	}
-
-	.store-download small{
-		display:block;
-
-		color:#64748b;
-
-		font-size:11px;
-	}
-
-	.store-download strong{
-		color:#0f172a;
-
-		font-size:18px;
-	}
-
-	/* =========================
-	   RIGHT
-	========================= */
-
-	.download-right{
-		flex:1;
-	}
-
-	/* APP PREVIEW */
-
-	.app-preview{
-		position:relative;
-
-		height:100%;
-
-		min-height:300px;
-
-		overflow:hidden;
-
-		border-radius:24px;
-
-		padding:35px;
-
-		background:
-		linear-gradient(
-			135deg,
-			#071120,
-			#10254f,
-			#1e3a8a
-		);
-
-		color:white;
-	}
-
-	/* BADGE */
-
-	.preview-badge{
-		display:inline-block;
-
-		padding:10px 16px;
-
-		border-radius:30px;
-
-		background:#2563eb;
-
-		font-size:12px;
-
-		font-weight:700;
-
-		margin-bottom:22px;
-	}
-
-	/* TITLE */
-
-	.app-preview h2{
-		font-size:42px;
-
-		line-height:1.1;
-
-		max-width:350px;
-
-		margin-bottom:20px;
-
-		font-weight:800;
-	}
-
-	/* TEXT */
-
-	.app-preview p{
-		color:#cbd5e1;
-
-		max-width:320px;
-
-		line-height:1.7;
-
-		font-size:15px;
-	}
-
-	/* PHONE IMAGE */
-
-	/* PHONE IMAGE */
-
-	.preview-phone{
-		position:absolute;
-
-		right:-20px;
-		bottom:-30px;
-
-		width:240px;
-
-		z-index:1;
-
-		transform:
-		rotate(-10deg);
-
-		filter:
-		drop-shadow(
-			0 25px 45px rgba(0,0,0,0.35)
-		);
-
-		transition:0.4s ease;
-	}
-
-	/* TEXT CONTENT */
-
-	.app-preview h2,
-	.app-preview p,
-	.preview-badge{
-		position:relative;
-
-		z-index:5;
-	}
-
-		/* PHONE HOVER */
-
-		.app-preview:hover .preview-phone{
-			transform:
-			rotate(-4deg)
-			translateY(-10px);
-		}
-
-		/* =========================
-		   RESPONSIVE
-		========================= */
-
-		@media(max-width:992px){
-
-			.download-dropdown{
-				width:100%;
-
-				right:0;
-
-				flex-direction:column;
-			}
-
-			.download-left{
-				width:100%;
-			}
-
-		}
-
-		@media(max-width:600px){
-
-			.download-dropdown{
-				padding:20px;
-			}
-
-			.app-preview h2{
-				font-size:30px;
-			}
-
-			.preview-phone{
-				width:150px;
-			}
-
-		}
-		
-		/* =========================
-	   WHY SECTION
-	========================= */
-
-	.why-section{
-		margin:120px 0;
-	}
-
-	/* CONTAINER */
-
-	.why-container{
-		background:white;
-
-		border:1px solid #e7eef8;
-
-		border-radius:35px;
-
-		padding:60px;
-
-		display:grid;
-
-		grid-template-columns:
-		1.2fr 1fr;
-
-		gap:50px;
-
-		box-shadow:
-		0 20px 60px rgba(0,0,0,0.05);
-	}
-
-	/* =========================
-	   LEFT
-	========================= */
-
-	.section-badge{
-		display:inline-block;
-
-		padding:10px 18px;
-
-		border-radius:30px;
-
-		background:#eff6ff;
-
-		color:#2563eb;
-
-		font-size:13px;
-
-		font-weight:700;
-
-		margin-bottom:25px;
-	}
-
-	/* TITLE */
-
-	.why-left h2{
-		font-size:58px;
-
-		line-height:1.1;
-
-		margin-bottom:25px;
-
-		color:#0f172a;
-
-		font-weight:800;
-	}
-
-	/* TEXT */
-
-	.why-left p{
-		color:#64748b;
-
-		font-size:18px;
-
-		line-height:1.9;
-
-		margin-bottom:25px;
-	}
-
-	/* =========================
-	   RIGHT GRID
-	========================= */
-
-	.why-right{
-		display:grid;
-
-		grid-template-columns:
-		repeat(2,1fr);
-
-		gap:22px;
-	}
-
-	/* CARD */
-
-	.why-card{
-		position:relative;
-
-		overflow:hidden;
-
-		background:white;
-
-		border:1px solid #e7eef8;
-
-		border-radius:30px;
-
-		padding:10px 15px;
-
-		text-align:center;
-
-		transition:0.35s ease;
-
-		box-shadow:
-		0 10px 30px rgba(0,0,0,0.04);
-	}
-
-	/* GLOW */
-
-	.why-card::before{
-		content:'';
-
-		position:absolute;
-
-		width:180px;
-		height:180px;
-
-		background:
-		radial-gradient(
-			circle,
-			rgba(37,99,235,0.14) 0%,
-			rgba(124,58,237,0.08) 40%,
-			transparent 75%
-		);
-
-		top:-70px;
-		right:-70px;
-
-		border-radius:50%;
-
-		filter:blur(20px);
-
-		z-index:0;
-
-		pointer-events:none;
-	}
-
-	/* CONTENT ABOVE GLOW */
-
-	.why-card *{
-		position:relative;
-		z-index:2;
-	}
-
-	/* ICON */
-
-	.why-icon{
-		width:75px;
-		height:75px;
-
-		margin:auto auto 22px;
-
-		border-radius:50%;
-
-		background:white;
-
-		display:flex;
-		align-items:center;
-		justify-content:center;
-
-		font-size:34px;
-
-		box-shadow:
-		0 10px 30px rgba(37,99,235,0.10);
-	}
-
-	/* TITLE */
-
-	.why-card h3{
-		font-size:16px;
-
-		line-height:1.5;
-
-		color:#0f172a;
-
-		font-weight:700;
-	}
-	
-	/* =========================
-	   ICON
-	========================= */
-
-	.why-icon{
-		width:90px;
-		height:90px;
-
-		margin:0 auto 30px;
-
-		border-radius:50%;
-
-		display:flex;
-		align-items:center;
-		justify-content:center;
-
-		transition:0.35s ease;
-	}
-
-	/* ICON STYLE */
-
-	.why-icon i{
-		font-size:38px;
-	}
-
-	/* COLORS */
-
-	.blue{
-		background:#eff6ff;
-	}
-
-	.blue i{
-		color:#2563eb;
-	}
-
-	.purple{
-		background:#f5f3ff;
-	}
-
-	.purple i{
-		color:#7c3aed;
-	}
-
-	.orange{
-		background:#fff7ed;
-	}
-
-	.orange i{
-		color:#f59e0b;
-	}
-
-	.green{
-		background:#ecfdf5;
-	}
-
-	.green i{
-		color:#10b981;
-	}
-
-	.pink{
-		background:#fdf2f8;
-	}
-
-	.pink i{
-		color:#ec4899;
-	}
-
-	.cyan{
-		background:#ecfeff;
-	}
-
-	.cyan i{
-		color:#06b6d4;
-	}
-
-	/* ICON HOVER */
-
-	.why-card:hover .why-icon{
-		transform:
-		rotate(-8deg)
-		scale(1.08);
-
-		box-shadow:
-		0 15px 30px rgba(37,99,235,0.10);
-	}
-
-	/* =========================
-	   RESPONSIVE
-	========================= */
-
-	@media(max-width:1100px){
-
-		.why-container{
-			grid-template-columns:1fr;
-		}
-
-	}
-
-	@media(max-width:768px){
-
-		.why-container{
-			padding:35px 25px;
-		}
-
-		.why-left h2{
-			font-size:40px;
-		}
-
-		.why-right{
-			grid-template-columns:1fr;
-		}
-
-	}
-
-	@media(max-width:600px){
-
-		.why-left h2{
-			font-size:34px;
-		}
-
-		.why-left p{
-			font-size:16px;
-		}
-
-	}
-	
-	/* =========================
-   SERVICES SECTION
-========================= */
-
-.services-section{
-    margin:70px 0;
-}
-
-/* HEADER */
-
-.services-header{
-    text-align:center;
-
-    max-width:900px;
-
-    margin:auto auto 70px;
-}
-
-/* BADGE */
-
-.services-badge{
-    display:inline-block;
-
-    padding:10px 18px;
-
-    border-radius:30px;
-
-    background:#eff6ff;
-
-    color:#2563eb;
-
-    font-size:13px;
-
-    font-weight:700;
-
-    margin-bottom:22px;
-}
-
-/* TITLE */
-
-.services-header h2{
-    font-size:50px;
-
-    line-height:1.1;
-
-    margin-bottom:22px;
-
-    color:#0f172a;
-
-    font-weight:800;
-}
-
-/* TEXT */
-
-.services-header p{
-    color:#64748b;
-
-    font-size:18px;
-
-    line-height:1.9;
-}
-
-/* =========================
-   GRID
-========================= */
-
-.services-grid{
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:30px;
-}
-
-/* =========================
-   CARD
-========================= */
-
-.service-card{
-    background:white;
-
-    border:1px solid #e7eef8;
-
-    border-radius:30px;
-
-    padding:40px 35px;
-
-    transition:0.35s ease;
-
-    position:relative;
-
-    overflow:hidden;
-
-    box-shadow:
-    0 10px 30px rgba(0,0,0,0.04);
-}
-
-/* GLOW */
-
-.service-card::before{
-    content:'';
-
-    position:absolute;
-
-    width:180px;
-    height:180px;
-
-    background:
-    radial-gradient(
-        circle,
-        rgba(37,99,235,0.05),
-        transparent
-    );
-
-    top:-60px;
-    right:-60px;
-}
-
-/* HOVER */
-
-.service-card:hover{
-    transform:
-    translateY(-12px);
-
-    border-color:#93c5fd;
-
-    box-shadow:
-    0 20px 50px rgba(37,99,235,0.12);
-}
-
-/* =========================
-   ICON
-========================= */
-
-.service-icon{
-    width:80px;
-    height:80px;
-
-    border-radius:24px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-size:38px;
-
-    margin-bottom:28px;
-}
-
-/* COLORS */
-
-.blue{
-    background:#eff6ff;
-}
-
-.purple{
-    background:#f5f3ff;
-}
-
-.orange{
-    background:#fff7ed;
-}
-
-.green{
-    background:#ecfdf5;
-}
-
-.pink{
-    background:#fdf2f8;
-}
-
-.cyan{
-    background:#ecfeff;
-}
-
-/* =========================
-   TITLE
-========================= */
-
-.service-card h3{
-    font-size:28px;
-
-    line-height:1.3;
-
-    margin-bottom:18px;
-
-    color:#0f172a;
-
-    font-weight:700;
-}
-
-/* TEXT */
-
-.service-card p{
-    color:#64748b;
-
-    line-height:1.9;
-
-    font-size:16px;
-
-    margin-bottom:30px;
-}
-
-/* BUTTON */
-
-.service-btn{
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    padding:14px 22px;
-
-    border-radius:14px;
-
-    background:#eff6ff;
-
-    color:#2563eb;
-
-    font-weight:600;
-
-    transition:0.3s ease;
-}
-
-/* BUTTON HOVER */
-
-.service-btn:hover{
-    background:#2563eb;
-
-    color:white;
-
-    transform:
-    translateX(5px);
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media(max-width:1100px){
-
-    .services-grid{
-        grid-template-columns:
-        repeat(2,1fr);
-    }
-
-}
-
-@media(max-width:768px){
-
-    .services-header h2{
-        font-size:40px;
-    }
-
-    .services-grid{
-        grid-template-columns:1fr;
-    }
-
-}
-
-@media(max-width:600px){
-
-    .services-header h2{
-        font-size:34px;
-    }
-
-    .services-header p{
-        font-size:16px;
-    }
-
-    .service-card{
-        padding:30px 25px;
-    }
-
-}
-
-/* =========================
-   PRICING SECTION
-========================= */
-
-.pricing-section{
-    margin:120px 0;
-}
-
-/* CONTAINER */
-
-.pricing-container{
-    display:grid;
-
-    grid-template-columns:
-    1fr 1fr;
-
-    gap:60px;
-
-    background:white;
-
-    border:1px solid #e7eef8;
-
-    border-radius:40px;
-
-    padding:70px;
-
-    box-shadow:
-    0 20px 60px rgba(0,0,0,0.05);
-}
-
-/* =========================
-   LEFT
-========================= */
-
-.pricing-badge{
-    display:inline-block;
-
-    padding:10px 18px;
-
-    border-radius:30px;
-
-    background:#eff6ff;
-
-    color:#2563eb;
-
-    font-size:13px;
-
-    font-weight:700;
-
-    margin-bottom:25px;
-}
-
-/* TITLE */
-
-.pricing-left h2{
-    font-size:58px;
-
-    line-height:1.1;
-
-    margin-bottom:25px;
-
-    color:#0f172a;
-
-    font-weight:800;
-}
-
-/* TEXT */
-
-.pricing-left p{
-    color:#64748b;
-
-    font-size:18px;
-
-    line-height:1.9;
-
-    margin-bottom:35px;
-}
-
-/* FEATURES */
-
-.pricing-features{
-    display:flex;
-    flex-direction:column;
-    gap:22px;
-}
-
-.feature-item{
-    font-size:20px;
-
-    color:#0f172a;
-
-    font-weight:600;
-}
-
-/* =========================
-   RIGHT
-========================= */
-
-.pricing-right h3{
-    font-size:42px;
-
-    margin-bottom:35px;
-
-    color:#2563eb;
-
-    font-weight:800;
-}
-
-/* PLANS */
-
-.plans{
-    display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-    gap:25px;
-
-    margin-bottom:35px;
-}
-
-/* PLAN CARD */
-
-.plan-card{
-    position:relative;
-
-    border:2px solid #e2e8f0;
-
-    border-radius:28px;
-
-    padding:35px 30px;
-
-    text-align:center;
-
-    transition:0.35s ease;
-
-    background:#fff;
-}
-
-/* ACTIVE */
-
-.active-plan{
-    border-color:#2563eb;
-
-    box-shadow:
-    0 20px 40px rgba(37,99,235,0.10);
-}
-
-/* HOVER */
-
-.plan-card:hover{
-    transform:
-    translateY(-8px);
-}
-
-/* TAG */
-
-.plan-tag{
-    position:absolute;
-
-    top:-12px;
-    left:50%;
-
-    transform:translateX(-50%);
-
-    background:
-    linear-gradient(
-        90deg,
-        #2563eb,
-        #7c3aed
-    );
-
-    color:white;
-
-    padding:8px 16px;
-
-    border-radius:30px;
-
-    font-size:11px;
-
-    font-weight:700;
-}
-
-/* TITLE */
-
-.plan-card h4{
-    font-size:32px;
-
-    margin-bottom:22px;
-
-    color:#0f172a;
-}
-
-/* PRICE */
-
-.price{
-    margin-bottom:15px;
-}
-
-.old-price{
-    text-decoration:line-through;
-
-    color:#94a3b8;
-
-    margin-right:10px;
-
-    font-size:20px;
-}
-
-.new-price{
-    font-size:42px;
-
-    font-weight:800;
-
-    color:#2563eb;
-}
-
-/* TEXT */
-
-.plan-card p{
-    color:#64748b;
-
-    margin-bottom:28px;
-
-    line-height:1.7;
-}
-
-/* BUTTON */
-
-.plan-btn{
-    width:100%;
-
-    padding:16px;
-
-    border:none;
-
-    border-radius:16px;
-
-    background:
-    linear-gradient(
-        90deg,
-        #2563eb,
-        #7c3aed
-    );
-
-    color:white;
-
-    font-size:16px;
-
-    font-weight:700;
-
-    cursor:pointer;
-
-    transition:0.3s;
-}
-
-/* SECONDARY */
-
-.secondary{
-    background:#eff6ff;
-    color:#2563eb;
-}
-
-/* BUTTON HOVER */
-
-.plan-btn:hover{
-    transform:
-    translateY(-4px);
-
-    box-shadow:
-    0 15px 35px rgba(37,99,235,0.20);
-}
-
-/* =========================
-   TOPUP
-========================= */
-
-.topup-box{
-    display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-    gap:20px;
-}
-
-/* CARD */
-
-.topup-card{
-    background:#f8fbff;
-
-    border:1px solid #e7eef8;
-
-    border-radius:22px;
-
-    padding:28px;
-
-    text-align:center;
-
-    transition:0.3s;
-}
-
-/* HOVER */
-
-.topup-card:hover{
-    transform:
-    translateY(-6px);
-
-    border-color:#93c5fd;
-
-    box-shadow:
-    0 15px 35px rgba(37,99,235,0.08);
-}
-
-/* TITLE */
-
-.topup-card h5{
-    font-size:26px;
-
-    color:#0f172a;
-
-    margin-bottom:10px;
-}
-
-/* TEXT */
-
-.topup-card p{
-    color:#64748b;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media(max-width:1100px){
-
-    .pricing-container{
-        grid-template-columns:1fr;
-    }
-
-}
-
-@media(max-width:768px){
-
-    .plans,
-    .topup-box{
-        grid-template-columns:1fr;
-    }
-
-    .pricing-left h2{
-        font-size:42px;
-    }
-
-    .pricing-right h3{
-        font-size:34px;
-    }
-
-}
-
-@media(max-width:600px){
-
-    .pricing-container{
-        padding:35px 25px;
-    }
-
-    .pricing-left h2{
-        font-size:34px;
-    }
-
-}
-
-/* =========================
-   WHY SECTION
-========================= */
-
-.why-broker-section{
-    padding:90px 0;
-
-    text-align:center;
-}
-
-/* TOP */
-
-.why-top{
-    max-width:850px;
-
-    margin:auto auto 60px;
-}
-
-/* BADGE */
-
-.mini-badge{
-    display:inline-block;
-
-    padding:10px 18px;
-
-    border-radius:30px;
-
-    background:#eff6ff;
-
-    color:#2563eb;
-
-    font-size:13px;
-
-    font-weight:700;
-
-    margin-bottom:25px;
-}
-
-/* TITLE */
-
-.why-top h2{
-    font-size:60px;
-
-    line-height:1.1;
-
-    margin-bottom:20px;
-
-    color:#0f172a;
-
-    font-weight:800;
-}
-
-/* TEXT */
-
-.why-top p{
-    font-size:22px;
-
-    color:#64748b;
-
-    line-height:1.8;
-}
-
-/* =========================
-   STATS GRID
-========================= */
-
-.stats-grid{
-    display:grid;
-
-    grid-template-columns:
-    repeat(4,1fr);
-
-    gap:30px;
-
-    max-width:1200px;
-
-    margin:auto;
-}
-
-/* CARD */
-
-.stat-card{
-    background:white;
-
-    border:1px solid #e7eef8;
-
-    border-radius:28px;
-
-    padding:45px 25px;
-
-    transition:0.35s ease;
-
-    box-shadow:
-    0 10px 30px rgba(0,0,0,0.04);
-}
-
-/* HOVER */
-
-.stat-card:hover{
-    transform:
-    translateY(-10px);
-
-    border-color:#93c5fd;
-
-    box-shadow:
-    0 20px 50px rgba(37,99,235,0.10);
-}
-
-/* NUMBER */
-
-.stat-card h3{
-    font-size:50px;
-
-    font-weight:800;
-
-    margin-bottom:18px;
-
-    background:
-    linear-gradient(
-        90deg,
-        #2563eb,
-        #7c3aed
-    );
-
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-/* TEXT */
-
-.stat-card span{
-    color:#64748b;
-
-    font-size:18px;
-
-    font-weight:500;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media(max-width:1100px){
-
-    .stats-grid{
-        grid-template-columns:
-        repeat(2,1fr);
-    }
-
-}
-
-@media(max-width:768px){
-
-    .why-top h2{
-        font-size:48px;
-    }
-
-    .why-top p{
-        font-size:18px;
-    }
-
-}
-
-@media(max-width:600px){
-
-    .stats-grid{
-        grid-template-columns:1fr;
-    }
-
-    .why-top h2{
-        font-size:38px;
-    }
-
-    .stat-card h3{
-        font-size:50px;
-    }
-
-}
-
-/* =========================
-   BROKERGENAI BRAND STYLE
-========================= */
-
-.brand-text{
-    font-weight:800;
-
-    color:#0f172a;
-
-    display:inline-block;
-}
-
-/* GENAI GRADIENT */
-
-.brand-text span{
-    background:
-    linear-gradient(
-        90deg,
-        #00bfff,
-        #2563eb,
-        #7c3aed,
-        #a855f7
-    );
-
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-
-    font-weight:800;
-}
-
-/* =========================
-   STAT ICON
-========================= */
-
-.stat-icon{
-    width:65px;
-    height:65px;
-
-    margin:0 auto 25px;
-
-    border-radius:18px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-size:30px;
-
-    background:
-    linear-gradient(
-        135deg,
-        #eff6ff,
-        #f5f3ff
-    );
-
-    box-shadow:
-    0 10px 25px rgba(37,99,235,0.08);
-
-    transition:0.35s ease;
-}
-
-/* HOVER EFFECT */
-
-.stat-card:hover .stat-icon{
-    transform:
-    rotate(-8deg)
-    scale(1.08);
-
-    box-shadow:
-    0 15px 30px rgba(37,99,235,0.15);
-}
-/* =========================
-   FEATURED SECTION
-========================= */
-
-.featured-section{
-    margin:120px 0;
-}
-
-/* TOP */
-
-.featured-top{
-    text-align:center;
-
-    max-width:850px;
-
-    margin:auto auto 70px;
-}
-
-/* BADGE */
-
-.featured-badge{
-    display:inline-block;
-
-    padding:10px 18px;
-
-    border-radius:30px;
-
-    background:#eff6ff;
-
-    color:#2563eb;
-
-    font-size:13px;
-
-    font-weight:700;
-
-    margin-bottom:22px;
-}
-
-/* TITLE */
-
-.featured-top h2{
-    font-size:64px;
-
-    font-weight:800;
-
-    color:#0f172a;
-
-    margin-bottom:20px;
-}
-
-/* TEXT */
-
-.featured-top p{
-    font-size:18px;
-
-    color:#64748b;
-
-    line-height:1.8;
-}
-
-/* =========================
-   GRID
-========================= */
-
-.property-grid{
-    display:grid;
-
-    grid-template-columns:
-    repeat(4,1fr);
-
-    gap:30px;
-}
-
-/* =========================
-   CARD
-========================= */
-
-.property-card{
-    background:white;
-
-    border-radius:30px;
-
-    overflow:hidden;
-
-    border:1px solid #e7eef8;
-
-    transition:0.4s ease;
-
-    box-shadow:0 10px 30px rgba(0,0,0,0.04);
-}
-
-/* HOVER */
-
-.property-card:hover{
-    transform:translateY(-12px);
-
-    box-shadow:0 25px 60px rgba(37,99,235,0.12);
-}
-
-/* IMAGE */
-
-.property-image{
-    position:relative;
-
-    overflow:hidden;
-
-    height:260px;
-}
-
-.property-image img{
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    transition:0.5s ease;
-}
-
-/* IMAGE HOVER */
-
-.property-card:hover img{
-    transform:scale(1.08);
-}
-
-/* TAG */
-
-.property-tag{
-    position:absolute;
-
-    top:18px;
-    left:18px;
-
-    padding:8px 16px;
-
-    border-radius:30px;
-
-    background:
-    linear-gradient(
-        90deg,
-        #2563eb,
-        #7c3aed
-    );
-
-    color:white;
-
-    font-size:12px;
-
-    font-weight:700;
-}
-
-/* WISHLIST */
-
-.wishlist-btn{
-    position:absolute;
-
-    top:18px;
-    right:18px;
-
-    width:42px;
-    height:42px;
-
-    border:none;
-
-    border-radius:50%;
-
-    background:white;
-
-    cursor:pointer;
-
-    transition:0.3s;
-}
-
-.wishlist-btn:hover{
-    background:#2563eb;
-    color:white;
-}
-
-/* CONTENT */
-
-.property-content{
-    padding:28px;
-}
-
-/* LOCATION */
-
-.property-location{
-    display:flex;
-    align-items:center;
-    gap:8px;
-
-    color:#64748b;
-
-    margin-bottom:16px;
-
-    font-size:14px;
-}
-
-/* TITLE */
-
-.property-content h3{
-    font-size:20px;
-
-    line-height:1.3;
-
-    margin-bottom:20px;
-
-    color:#0f172a;
-
-    font-weight:700;
-}
-
-/* INFO */
-
-.property-info{
-    display:flex;
-
-    justify-content:space-between;
-
-    margin-bottom:25px;
-
-    color:#64748b;
-
-    font-size:14px;
-}
-
-/* FOOTER */
-
-.property-footer{
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-}
-
-/* PRICE */
-
-.property-footer h4{
-    font-size:32px;
-
-    color:#0b7b8e;
-
-    font-weight:800;
-}
-
-/* BUTTON */
-
-.property-footer a{
-    padding:12px 18px;
-
-    border-radius:14px;
-
-    background:#eff6ff;
-
-    color:#2563eb;
-
-    font-size:14px;
-
-    font-weight:600;
-
-    transition:0.3s;
-}
-
-/* BUTTON HOVER */
-
-.property-footer a:hover{
-    background:#2563eb;
-    color:white;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media(max-width:1400px){
-
-    .property-grid{
-        grid-template-columns:
-        repeat(3,1fr);
-    }
-
-}
-
-@media(max-width:1100px){
-
-    .property-grid{
-        grid-template-columns:
-        repeat(2,1fr);
-    }
-
-}
-
-@media(max-width:768px){
-
-    .featured-top h2{
-        font-size:42px;
-    }
-
-}
-
-@media(max-width:600px){
-
-    .property-grid{
-        grid-template-columns:1fr;
-    }
-
-}
-
-/* =========================
-   TESTIMONIAL SECTION
-========================= */
-
-.testimonial-section{
-    margin:140px 0;
-}
-
-/* TOP */
-
-.testimonial-top{
-    text-align:center;
-
-    max-width:850px;
-
-    margin:auto auto 70px;
-}
-
-/* BADGE */
-
-.testimonial-badge{
-    display:inline-block;
-
-    padding:10px 18px;
-
-    border-radius:30px;
-
-    background:#eff6ff;
-
-    color:#2563eb;
-
-    font-size:13px;
-
-    font-weight:700;
-
-    margin-bottom:22px;
-}
-
-/* TITLE */
-
-.testimonial-top h2{
-    font-size:64px;
-
-    font-weight:800;
-
-    color:#0f172a;
-
-    line-height:1.2;
-
-    margin-bottom:20px;
-}
-
-/* TEXT */
-
-.testimonial-top p{
-    font-size:18px;
-
-    color:#64748b;
-
-    line-height:1.8;
-}
-
-/* =========================
-   GRID
-========================= */
-
-.testimonial-grid{
-    display:grid;
-
-    grid-template-columns:
-    repeat(4,1fr);
-
-    gap:30px;
-}
-
-/* =========================
-   CARD
-========================= */
-
-.testimonial-card{
-    position:relative;
-
-    background:white;
-
-    border:1px solid #e7eef8;
-
-    border-radius:30px;
-
-    padding:35px;
-
-    overflow:hidden;
-
-    transition:0.4s ease;
-
-    box-shadow:
-    0 10px 30px rgba(0,0,0,0.04);
-}
-
-/* GLOW */
-
-.testimonial-card::before{
-    content:'';
-
-    position:absolute;
-
-    width:180px;
-    height:180px;
-
-    background:
-    radial-gradient(
-        circle,
-        rgba(37,99,235,0.10),
-        transparent
-    );
-
-    top:-70px;
-    right:-70px;
-
-    border-radius:50%;
-
-    z-index:0;
-}
-
-/* CONTENT */
-
-.testimonial-card *{
-    position:relative;
-    z-index:2;
-}
-
-/* HOVER */
-
-.testimonial-card:hover{
-    transform:
-    translateY(-10px);
-
-    border-color:#93c5fd;
-
-    box-shadow:
-    0 25px 60px rgba(37,99,235,0.10);
-}
-
-/* =========================
-   ICON
-========================= */
-
-.quote-icon{
-    width:60px;
-    height:60px;
-
-    border-radius:18px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:#eff6ff;
-
-    margin-bottom:25px;
-}
-
-.quote-icon i{
-    font-size:28px;
-
-    color:#2563eb;
-}
-
-/* COLORS */
-
-.purple-icon{
-    background:#f5f3ff;
-}
-
-.purple-icon i{
-    color:#7c3aed;
-}
-
-.cyan-icon{
-    background:#ecfeff;
-}
-
-.cyan-icon i{
-    color:#06b6d4;
-}
-
-.green-icon{
-    background:#ecfdf5;
-}
-
-.green-icon i{
-    color:#10b981;
-}
-
-.orange-icon{
-    background:#fff7ed;
-}
-
-.orange-icon i{
-    color:#f59e0b;
-}
-
-.pink-icon{
-    background:#fdf2f8;
-}
-
-.pink-icon i{
-    color:#ec4899;
-}
-
-.blue-icon{
-    background:#dbeafe;
-}
-
-.blue-icon i{
-    color:#2563eb;
-}
-
-.violet-icon{
-    background:#ede9fe;
-}
-
-.violet-icon i{
-    color:#8b5cf6;
-}
-
-/* =========================
-   STARS
-========================= */
-
-.stars{
-    color:#fbbf24;
-
-    font-size:20px;
-
-    margin-bottom:22px;
-}
-
-/* TEXT */
-
-.testimonial-card p{
-    color:#475569;
-
-    line-height:1.9;
-
-    font-size:17px;
-
-    margin-bottom:30px;
-}
-
-/* =========================
-   USER
-========================= */
-
-.user-info{
-    display:flex;
-
-    align-items:center;
-
-    gap:15px;
-}
-
-/* IMAGE */
-
-.user-info img{
-    width:58px;
-    height:58px;
-
-    border-radius:50%;
-
-    object-fit:cover;
-}
-
-/* NAME */
-
-.user-info h4{
-    font-size:18px;
-
-    color:#0f172a;
-
-    margin-bottom:4px;
-
-    font-weight:700;
-}
-
-/* ROLE */
-
-.user-info span{
-    color:#64748b;
-
-    font-size:14px;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media(max-width:1400px){
-
-    .testimonial-grid{
-        grid-template-columns:
-        repeat(3,1fr);
-    }
-
-}
-
-@media(max-width:1100px){
-
-    .testimonial-grid{
-        grid-template-columns:
-        repeat(2,1fr);
-    }
-
-}
-
-@media(max-width:768px){
-
-    .testimonial-top h2{
-        font-size:42px;
-    }
-
-}
-
-@media(max-width:600px){
-
-    .testimonial-grid{
-        grid-template-columns:1fr;
-    }
-
-}
-.feature-icon{
-    margin-right:10px;
-
-    font-size:18px;
-
-    background:
-    linear-gradient(
-        90deg,
-        #2563eb,
-        #7c3aed
-    );
-
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
   </style>
 </head>
-
 <body>
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <!-- LOGO -->
-    <div class="logo-wrapper">
 
-        <img
-            src="images/logo.png"
-            alt="BrokerGenAI"
-            class="logo-img"
-        >
-
-        <h2 class="logo-text">
-            Broker <span>GenAI</span>
-        </h2>
-
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo">Sumit.co.in</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#certifications">Certs</a>
+      <a href="#contact">Contact</a>
     </div>
-
-    <!-- MENU -->
-
-    <ul class="nav-links">
-
-        <!-- HOME -->
-
-        <li>
-            <a href="#">Home</a>
-        </li>
-
-        <!-- PROPERTY DROPDOWN -->
-
-        <li class="dropdown">
-
-            <a href="#">
-                Property
-                 <svg
-					class="dropdown-icon"
-					xmlns="http://www.w3.org/2000/svg"
-					width="18"
-					height="18"
-					viewBox="0 0 24 24"
-					fill="none"
-					stroke="currentColor"
-					stroke-width="2.5"
-					stroke-linecap="round"
-					stroke-linejoin="round">
-					<polyline points="6 9 12 15 18 9"></polyline>
-				</svg>
-            </a>
-
-            <!-- DROPDOWN -->
-
-            <div class="mega-menu">
-
-                <h3>
-                    Discover BrokerGenAI Services
-                </h3>
-
-                <div class="mega-grid">
-
-                    <!-- ITEM -->
-
-                    <div class="mega-item">
-                        <div class="icon">🏢</div>
-
-                        <div>
-                            <h4>Property Management</h4>
-                            <p>
-                                Smart AI property tracking,
-                                tenant management and analytics.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- ITEM -->
-
-                    <div class="mega-item">
-                        <div class="icon">💰</div>
-
-                        <div>
-                            <h4>Home Loans</h4>
-                            <p>
-                                Instant approvals and
-                                AI-powered loan recommendations.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- ITEM -->
-
-                    <div class="mega-item">
-                        <div class="icon">📈</div>
-
-                        <div>
-                            <h4>Investment Insights</h4>
-                            <p>
-                                Market trends, AI prediction
-                                and smart investment suggestions.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- ITEM -->
-
-                    <div class="mega-item">
-                        <div class="icon">🤖</div>
-
-                        <div>
-                            <h4>AI Assistant</h4>
-                            <p>
-                                AI chatbot for smart
-                                property discovery.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- ITEM -->
-
-                    <div class="mega-item">
-                        <div class="icon">🏠</div>
-
-                        <div>
-                            <h4>Luxury Homes</h4>
-                            <p>
-                                Explore premium villas,
-                                penthouses and apartments.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- ITEM -->
-
-                    <div class="mega-item">
-                        <div class="icon">📱</div>
-
-                        <div>
-                            <h4>Mobile App</h4>
-                            <p>
-                                Access BrokerGenAI
-                                anytime anywhere.
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </li>
-
-        <!-- SERVICES -->
-
-        <li class="dropdown">
-
-            <a href="#">
-                Services
-                <svg
-					class="dropdown-icon"
-					xmlns="http://www.w3.org/2000/svg"
-					width="18"
-					height="18"
-					viewBox="0 0 24 24"
-					fill="none"
-					stroke="currentColor"
-					stroke-width="2.5"
-					stroke-linecap="round"
-					stroke-linejoin="round">
-					<polyline points="6 9 12 15 18 9"></polyline>
-				</svg>
-            </a>
-
-            <div class="small-dropdown">
-
-                <a href="#">CRM</a>
-                <a href="#">Lead Generation</a>
-                <a href="#">Analytics</a>
-                <a href="#">Agent Dashboard</a>
-
-            </div>
-
-        </li>
-
-        <!-- RESOURCES -->
-
-        <li>
-            <a href="#">Resources</a>
-        </li>
-
-        <!-- DOWNLOAD -->
-
-        <li class="dropdown">
-            <a href="#">Download App
-				<svg
-					class="dropdown-icon"
-					xmlns="http://www.w3.org/2000/svg"
-					width="18"
-					height="18"
-					viewBox="0 0 24 24"
-					fill="none"
-					stroke="currentColor"
-					stroke-width="2.5"
-					stroke-linecap="round"
-					stroke-linejoin="round">
-					<polyline points="6 9 12 15 18 9"></polyline>
-				</svg>
-			</a>
-			<div class="download-dropdown">
-
-				<!-- LEFT -->
-
-				<div class="download-left">
-
-					<h3>
-						Try BrokerGenAI App
-					</h3>
-
-					<!-- PLAY STORE -->
-
-					<a href="#" class="store-download">
-
-						<img
-							src="https://cdn-icons-png.flaticon.com/512/888/888857.png"
-							alt=""
-						>
-
-						<div>
-							<small>GET IT ON</small>
-							<strong>Google Play</strong>
-						</div>
-
-					</a>
-
-					<!-- APP STORE -->
-
-					<a href="#" class="store-download">
-
-						<img
-							src="https://cdn-icons-png.flaticon.com/512/831/831276.png"
-							alt=""
-						>
-
-						<div>
-							<small>DOWNLOAD ON THE</small>
-							<strong>App Store</strong>
-						</div>
-
-					</a>
-
-				</div>
-
-				<!-- RIGHT -->
-
-				<div class="download-right">
-
-					<div class="app-preview">
-
-						<span class="preview-badge">
-							BROKERGENAI
-						</span>
-
-						<h2>
-							Smart AI Powered
-							Real Estate
-							Experience
-						</h2>
-
-						<p>
-							Discover premium properties,
-							AI recommendations and
-							instant smart search.
-						</p>
-
-						<img
-							src="images/mobile2.png"
-							alt=""
-							class="preview-phone"
-						>
-
-					</div>
-
-				</div>
-
-			</div>
-        </li>
-
-    </ul>
-
-    <!-- BUTTONS -->
-
-    <div class="nav-buttons">
-
-        <button class="login-btn">
-            Login
-        </button>
-
-        <button class="register-btn">
-            Register
-        </button>
-
-    </div>
-   </nav>
-
-  <!-- HERO -->
-<div class="container">
-  <section class="hero">
-
-    <div class="hero-left">
-
-      <h1>
-        Find Properties with
-        <span>AI Intelligence</span>
-      </h1>
-
-      <p>
-        Discover premium properties, smart recommendations,
-        verified listings, and investment opportunities using
-        advanced AI technology.
-      </p>
-
-      <div class="hero-buttons">
-        <a href="#" class="btn-primary">Explore Properties</a>
-        <a href="#" class="btn-secondary white-btn">Try AI Assistant</a>
+    <div class="nav-right">
+      <button class="theme-btn" id="themeToggle" title="Toggle theme">🌙</button>
+      <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hire Me</button>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
       </div>
-
-      <div class="search-box">
-        <input type="text" placeholder="Search 3BHK under 1Cr in Gurgaon...">
-        <button class="search-btn">Search</button>
-      </div>
-
     </div>
-
-    <!-- HERO IMAGE SLIDER -->
-	<div class="hero-slider">
-
-		<!-- SLIDES -->
-
-		<div class="slides fade">
-			<img
-				src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1400&auto=format&fit=crop"
-				alt=""
-			>
-		</div>
-
-		<div class="slides fade">
-			<img
-				src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1400&auto=format&fit=crop"
-				alt=""
-			>
-		</div>
-
-		<div class="slides fade">
-			<img
-				src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1400&auto=format&fit=crop"
-				alt=""
-			>
-		</div>
-
-		<div class="slides fade">
-			<img
-				src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1400&auto=format&fit=crop"
-				alt=""
-			>
-		</div>
-
-		<!-- BUTTONS -->
-
-		<button class="prev" onclick="changeSlide(-1)">
-			❮
-		</button>
-
-		<button class="next" onclick="changeSlide(1)">
-			❯
-		</button>
-
-		<!-- DOTS -->
-
-		<div class="dots-container">
-
-			<span class="dot active" onclick="currentSlide(1)"></span>
-
-			<span class="dot" onclick="currentSlide(2)"></span>
-
-			<span class="dot" onclick="currentSlide(3)"></span>
-
-			<span class="dot" onclick="currentSlide(4)"></span>
-
-		</div>
-
-	</div>
-
-  </section>
-  
- <section class="why-broker-section">
-
-    <!-- TOP -->
-
-    <div class="why-top">
-        <h2>
-            Why <span class="brand-text">Broker<span>GenAI</span></span>?
-        </h2>
-
-        <p>
-            Regular Real Estate Platforms Show Data,
-            BrokerGenAI Delivers Smart Insights.
-        </p>
-
-    </div>
-
-    <!-- STATS -->
-
-    <div class="stats-grid">
-
-        <!-- CARD -->
-
-        <div class="stat-card">
-			<div class="stat-icon">
-				<i class="bi bi-buildings"></i>
-			</div>
-            <h3>50K+</h3>
-
-            <span>
-                Verified Properties
-            </span>
-
-        </div>
-
-        <!-- CARD -->
-
-        <div class="stat-card">
-			<div class="stat-icon">
-				<i class="bi bi-search"></i>
-			</div>
-            <h3>10K+</h3>			
-            <span>
-                Trusted Agents
-            </span>
-
-        </div>
-
-        <!-- CARD -->
-
-        <div class="stat-card">
-			<div class="stat-icon">
-				<i class="bi bi-people"></i>
-			</div>
-            <h3>99%</h3>
-
-            <span>
-                AI Match Accuracy
-            </span>
-
-        </div>
-
-        <!-- CARD -->
-
-        <div class="stat-card">
-			<div class="stat-icon">
-				<i class="bi bi-lightning-charge"></i>
-			</div>
-            <h3>24/7</h3>
-
-            <span>
-                AI Property Assistant
-            </span>
-
-        </div>
-
-    </div>
-
-</section>
-  
-  <!-- SERVICES SECTION -->
-
-<section class="services-section">
-
-    <!-- TOP -->
-
-    <div class="services-header">
-
-        <span class="services-badge">
-            OUR SERVICES
-        </span>
-
-        <h2>
-            AI Powered Real Estate Services
-        </h2>
-
-        <p>
-            BrokerGenAI provides smart AI-driven real estate
-            solutions for property buyers, investors, agents,
-            and businesses. Discover intelligent tools designed
-            to simplify property search, investment analysis,
-            and real estate management.
-        </p>
-
-    </div>
-
-    <!-- SERVICES GRID -->
-
-    <div class="services-grid">
-
-        <!-- CARD -->
-
-        <div class="service-card">
-
-            <div class="service-icon blue">
-               <i class="bi bi-house"></i>
-			</div>
-
-            <h3>
-                AI Property Search
-            </h3>
-
-            <p>
-                Discover premium properties with
-                AI-powered recommendations,
-                smart filtering and instant search.
-            </p>
-
-            <a href="#" class="service-btn">
-                View More →
-            </a>
-
-        </div>
-
-        <!-- CARD -->
-
-        <div class="service-card">
-
-            <div class="service-icon purple">
-				<i class="bi bi-robot"></i>
-			</div>
-
-            <h3>
-                AI Assistant
-            </h3>
-
-            <p>
-                Get intelligent property guidance,
-                smart suggestions and instant
-                answers using AI technology.
-            </p>
-
-            <a href="#" class="service-btn">
-                View More →
-            </a>
-
-        </div>
-
-        <!-- CARD -->
-
-        <div class="service-card">
-
-            <div class="service-icon orange">
-                 <i class="bi bi-graph-up-arrow"></i>
-            </div>
-
-            <h3>
-                Investment Insights
-            </h3>
-
-            <p>
-                Analyze property trends, ROI,
-                future growth potential and
-                market opportunities instantly.
-            </p>
-
-            <a href="#" class="service-btn">
-                View More →
-            </a>
-
-        </div>
-
-        <!-- CARD -->
-
-        <div class="service-card">
-
-            <div class="service-icon green">
-                <i class="bi bi-phone"></i>
-            </div>
-
-            <h3>
-                Mobile Experience
-            </h3>
-
-            <p>
-                Access smart property tools,
-                AI recommendations and
-                instant updates anywhere.
-            </p>
-
-            <a href="#" class="service-btn">
-                View More →
-            </a>
-
-        </div>
-
-        <!-- CARD -->
-
-        <div class="service-card">
-
-            <div class="service-icon pink">
-                 <i class="bi bi-shield-check"></i>
-            </div>
-
-            <h3>
-                Verified Listings
-            </h3>
-
-            <p>
-                Explore trusted properties with
-                verified details, images,
-                ownership and documents.
-            </p>
-
-            <a href="#" class="service-btn">
-                View More →
-            </a>
-
-        </div>
-
-        <!-- CARD -->
-
-        <div class="service-card">
-
-            <div class="service-icon cyan">
-                <i class="bi bi-lightning-charge"></i>
-            </div>
-
-            <h3>
-                Smart Automation
-            </h3>
-
-            <p>
-                Save time with AI automation,
-                smart alerts and intelligent
-                property matching systems.
-            </p>
-
-            <a href="#" class="service-btn">
-                View More →
-            </a>
-
-        </div>
-
-    </div>
-
-</section>  
-
-  <!-- PROPERTIES -->
-
-  <!-- FEATURED PROPERTIES -->
-
-<section class="featured-section">
-
-    <!-- TOP -->
-
-    <div class="featured-top">
-
-        <span class="featured-badge">
-            AI RECOMMENDED PROPERTIES
-        </span>
-
-        <h2>
-            Featured Properties
-        </h2>
-
-        <p>
-            Discover luxury homes, premium apartments,
-            villas and smart investment opportunities
-            powered by AI recommendations.
-        </p>
-
-    </div>
-
-    <!-- GRID -->
-
-    <div class="property-grid">
-
-        <!-- CARD 1 -->
-
-        <div class="property-card">
-
-            <div class="property-image">
-
-                <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1200&auto=format&fit=crop" alt="">
-
-                <span class="property-tag">
-                    Featured
-                </span>
-
-                <button class="wishlist-btn">
-                    <i class="bi bi-heart"></i>
-                </button>
-
-            </div>
-
-            <div class="property-content">
-
-                <div class="property-location">
-                    <i class="bi bi-geo-alt"></i>
-                    Gurgaon, Haryana
-                </div>
-
-                <h3>
-                    Luxury Apartment
-                </h3>
-
-                <div class="property-info">
-
-                    <span>
-                        <i class="bi bi-house-door"></i>
-                        4 BHK
-                    </span>
-
-                    <span>
-                        <i class="bi bi-aspect-ratio"></i>
-                        3200 sqft
-                    </span>
-
-                </div>
-
-                <div class="property-footer">
-
-                    <h4>
-                        ₹1.2 Cr
-                    </h4>
-
-                    <a href="#">
-                        View Details
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- CARD 2 -->
-
-        <div class="property-card">
-
-            <div class="property-image">
-
-                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop" alt="">
-
-                <span class="property-tag">
-                    AI Match
-                </span>
-
-                <button class="wishlist-btn">
-                    <i class="bi bi-heart"></i>
-                </button>
-
-            </div>
-
-            <div class="property-content">
-
-                <div class="property-location">
-                    <i class="bi bi-geo-alt"></i>
-                    Noida, UP
-                </div>
-
-                <h3>
-                    Modern Villa
-                </h3>
-
-                <div class="property-info">
-
-                    <span>
-                        <i class="bi bi-house-door"></i>
-                        5 BHK
-                    </span>
-
-                    <span>
-                        <i class="bi bi-aspect-ratio"></i>
-                        4500 sqft
-                    </span>
-
-                </div>
-
-                <div class="property-footer">
-
-                    <h4>
-                        ₹2.8 Cr
-                    </h4>
-
-                    <a href="#">
-                        View Details
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- CARD 3 -->
-
-        <div class="property-card">
-
-            <div class="property-image">
-
-                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200&auto=format&fit=crop" alt="">
-
-                <span class="property-tag">
-                    Premium
-                </span>
-
-                <button class="wishlist-btn">
-                    <i class="bi bi-heart"></i>
-                </button>
-
-            </div>
-
-            <div class="property-content">
-
-                <div class="property-location">
-                    <i class="bi bi-geo-alt"></i>
-                    Mumbai, Maharashtra
-                </div>
-
-                <h3>
-                    Smart Penthouse
-                </h3>
-
-                <div class="property-info">
-
-                    <span>
-                        <i class="bi bi-house-door"></i>
-                        3 BHK
-                    </span>
-
-                    <span>
-                        <i class="bi bi-aspect-ratio"></i>
-                        2700 sqft
-                    </span>
-
-                </div>
-
-                <div class="property-footer">
-
-                    <h4>
-                        ₹4.5 Cr
-                    </h4>
-
-                    <a href="#">
-                        View Details
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- CARD 4 -->
-
-        <div class="property-card">
-            <div class="property-image">
-                <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1200&auto=format&fit=crop" alt="">
-                <span class="property-tag">Luxury</span>
-                <button class="wishlist-btn">
-                    <i class="bi bi-heart"></i>
-                </button>
-            </div>
-
-            <div class="property-content">
-
-                <div class="property-location">
-                    <i class="bi bi-geo-alt"></i>
-                    Bangalore, Karnataka
-                </div>
-
-                <h3>Skyline Residency</h3>
-
-                <div class="property-info">
-
-                    <span>
-                        <i class="bi bi-house-door"></i>
-                        4 BHK
-                    </span>
-
-                    <span>
-                        <i class="bi bi-aspect-ratio"></i>
-                        3500 sqft
-                    </span>
-
-                </div>
-
-                <div class="property-footer">
-                    <h4>₹3.2 Cr</h4>
-                    <a href="#">View Details</a>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- CARD 5 -->
-
-        <div class="property-card">
-            <div class="property-image">
-                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop" alt="">
-                <span class="property-tag">Trending</span>
-                <button class="wishlist-btn">
-                    <i class="bi bi-heart"></i>
-                </button>
-            </div>
-
-            <div class="property-content">
-
-                <div class="property-location">
-                    <i class="bi bi-geo-alt"></i>
-                    Pune, Maharashtra
-                </div>
-
-                <h3>Elite Smart Home</h3>
-
-                <div class="property-info">
-
-                    <span>
-                        <i class="bi bi-house-door"></i>
-                        3 BHK
-                    </span>
-
-                    <span>
-                        <i class="bi bi-aspect-ratio"></i>
-                        2500 sqft
-                    </span>
-
-                </div>
-
-                <div class="property-footer">
-                    <h4>₹1.9 Cr</h4>
-                    <a href="#">View Details</a>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- CARD 6 -->
-
-        <div class="property-card">
-            <div class="property-image">
-                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200&auto=format&fit=crop" alt="">
-                <span class="property-tag">AI Choice</span>
-                <button class="wishlist-btn">
-                    <i class="bi bi-heart"></i>
-                </button>
-            </div>
-
-            <div class="property-content">
-
-                <div class="property-location">
-                    <i class="bi bi-geo-alt"></i>
-                    Hyderabad, Telangana
-                </div>
-
-                <h3>Urban Villa</h3>
-
-                <div class="property-info">
-
-                    <span>
-                        <i class="bi bi-house-door"></i>
-                        5 BHK
-                    </span>
-
-                    <span>
-                        <i class="bi bi-aspect-ratio"></i>
-                        5000 sqft
-                    </span>
-
-                </div>
-
-                <div class="property-footer">
-                    <h4>₹5.1 Cr</h4>
-                    <a href="#">View Details</a>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- CARD 7 -->
-
-        <div class="property-card">
-            <div class="property-image">
-                <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1200&auto=format&fit=crop" alt="">
-                <span class="property-tag">Hot Deal</span>
-                <button class="wishlist-btn">
-                    <i class="bi bi-heart"></i>
-                </button>
-            </div>
-
-            <div class="property-content">
-
-                <div class="property-location">
-                    <i class="bi bi-geo-alt"></i>
-                    Delhi NCR
-                </div>
-
-                <h3>Premium Residency</h3>
-
-                <div class="property-info">
-
-                    <span>
-                        <i class="bi bi-house-door"></i>
-                        4 BHK
-                    </span>
-
-                    <span>
-                        <i class="bi bi-aspect-ratio"></i>
-                        3100 sqft
-                    </span>
-
-                </div>
-
-                <div class="property-footer">
-                    <h4>₹2.6 Cr</h4>
-                    <a href="#">View Details</a>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- CARD 8 -->
-
-        <div class="property-card">
-            <div class="property-image">
-                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop" alt="">
-                <span class="property-tag">Luxury</span>
-                <button class="wishlist-btn">
-                    <i class="bi bi-heart"></i>
-                </button>
-            </div>
-
-            <div class="property-content">
-
-                <div class="property-location">
-                    <i class="bi bi-geo-alt"></i>
-                    Goa
-                </div>
-
-                <h3>Beachfront Mansion</h3>
-
-                <div class="property-info">
-
-                    <span>
-                        <i class="bi bi-house-door"></i>
-                        6 BHK
-                    </span>
-
-                    <span>
-                        <i class="bi bi-aspect-ratio"></i>
-                        6500 sqft
-                    </span>
-
-                </div>
-
-                <div class="property-footer">
-                    <h4>₹8.5 Cr</h4>
-                    <a href="#">View Details</a>
-                </div>
-
-            </div>
-        </div>
-
-    </div>
-
-</section>
-
-  <!-- MOBILE APP SECTION -->
-
-<section class="mobile-app">
-
-  <div class="mobile-left">
-
-    <span class="mobile-tag">
-      AI Powered Mobile Experience
-    </span>
-
-    <h2>
-      Smart Property Search
-      in Your Pocket
-    </h2>
-
-    <p>
-      Discover verified properties, AI recommendations,
-      investment insights, and smart search experiences
-      directly from your smartphone.
-    </p>
-
-    <div class="mobile-features">
-
-      <div class="feature-box">
-        <i class="bi bi-stars feature-icon"></i> AI Property Match
-      </div>
-
-      <div class="feature-box">
-        <i class="bi bi-bell-fill feature-icon"></i> Instant Notifications
-      </div>
-
-      <div class="feature-box">
-        <i class="bi bi-graph-up-arrow feature-icon"></i> Investment Insights
-      </div>
-
-      <div class="feature-box">
-        <i class="bi bi-mic-fill feature-icon"></i> Voice Search
-      </div>
-
-    </div>
-
-    <div class="download-buttons">
-
-      <a href="#" class="store-btn">
-
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/888/888857.png"
-        >
-
-        <div>
-          <small>GET IT ON</small>
-          <strong>Google Play</strong>
-        </div>
-
-      </a>
-
-      <a href="#" class="store-btn">
-
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/831/831276.png"
-        >
-
-        <div>
-          <small>Download on the</small>
-          <strong>App Store</strong>
-        </div>
-
-      </a>
-
-    </div>
-
   </div>
-
-  <!-- MOBILE MOCKUP -->
-
-  <div class="mobile-right">
-
-    <div class="phones">
-
-      <img
-        class="phone-back"
-        src="images/mobile1.png?q=80&w=1200&auto=format&fit=crop"
-      >
-
-      <img
-        class="phone-front"
-        src="images/mobile2.png?q=80&w=1200&auto=format&fit=crop"
-      >
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- WHY BROKERGENAI SECTION -->
-
-<section class="why-section">
-
-    <div class="why-container">
-
-        <!-- LEFT CONTENT -->
-
-        <div class="why-left">
-
-            <div class="section-badge">
-                WHY BROKERGENAI
-            </div>
-
-            <h2>
-                Why Choose
-                <span class="brand-text">Broker<span>GenAI</span></span>?
-            </h2>
-
-            <p>
-                BrokerGenAI is an AI-powered real estate platform
-                designed to simplify property discovery, investment
-                analysis, and client management for buyers,
-                investors, and brokers.
-            </p>
-
-            <p>
-                Instead of browsing multiple portals, BrokerGenAI
-                gives you intelligent property recommendations,
-                verified listings, AI-driven insights, and smart
-                search experiences in one seamless platform.
-                Whether you are searching for your dream home or
-                growing your real estate business, BrokerGenAI
-                helps you make smarter decisions faster.
-            </p>
-
-        </div>
-
-        <!-- RIGHT FEATURES -->
-
-        <div class="why-right">
-
-            <!-- CARD -->
-
-            <div class="why-card">
-
-                <div class="why-icon blue">
-						<i class="bi bi-house-door"></i>
-                </div>
-
-                <h3>
-                    AI Property
-                    Recommendations
-                </h3>
-
-            </div>
-
-            <!-- CARD -->
-
-            <div class="why-card">
-
-                <div class="why-icon purple">
-					<i class="bi bi-robot"></i>
-                </div>
-
-                <h3>
-                    Smart AI Assistant
-                    & Search
-                </h3>
-
-            </div>
-
-            <!-- CARD -->
-
-            <div class="why-card">
-
-                <div class="why-icon orange">
-					<i class="bi bi-graph-up-arrow"></i>
-                </div>
-
-                <h3>
-                    Investment &
-                    Market Insights
-                </h3>
-
-            </div>
-
-            <!-- CARD -->
-
-            <div class="why-card">
-
-                <div class="why-icon green">
-					<i class="bi bi-phone"></i>
-                </div>
-
-                <h3>
-                    Powerful Mobile
-                    Experience
-                </h3>
-
-            </div>
-
-            <!-- CARD -->
-
-            <div class="why-card">
-
-                <div class="why-icon pink">
-					<i class="bi bi-shield-check"></i>
-                </div>
-
-                <h3>
-                    Verified &
-                    Trusted Listings
-                </h3>
-
-            </div>
-
-            <!-- CARD -->
-
-            <div class="why-card">
-
-                <div class="why-icon cyan">
-					<i class="bi bi-lightning-charge"></i>
-				</div>
-
-                <h3>
-                    Faster Search &
-                    Better Decisions
-                </h3>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-  <!-- CUSTOMER FEEDBACK -->
-<!-- =========================
-     TESTIMONIAL SECTION
-========================= -->
-
-<section class="testimonial-section">
-
-    <!-- TOP -->
-
-    <div class="testimonial-top">
-
-        <span class="testimonial-badge">
-            CUSTOMER REVIEWS
-        </span>
-
-        <h2>
-            What People Say About
-            <span class="brand-text">
-                Broker<span>GenAI</span>
-            </span>
-        </h2>
-
-        <p>
-            Trusted by thousands of property buyers,
-            investors and real estate professionals.
-        </p>
-
-    </div>
-
-    <!-- GRID -->
-
-    <div class="testimonial-grid">
-
-        <!-- CARD 1 -->
-
-        <div class="testimonial-card">
-
-            <div class="user-info">
-                <img src="https://randomuser.me/api/portraits/men/18.jpg">
-                <div>
-                    <h4>Rahul Sharma</h4>
-                    <span>Property Buyer</span>
-                </div>
-            </div>
-            <div class="stars">
-                ★★★★★
-            </div>
-
-            <p>
-                BrokerGenAI helped me find my dream
-                apartment within days. AI recommendations
-                were incredibly accurate.
-            </p>
-
-
-        </div>
-
-        <!-- CARD 2 -->
-
-        <div class="testimonial-card">
-		
-            <div class="user-info">
-
-                <img src="https://randomuser.me/api/portraits/women/15.jpg">
-
-                <div>
-                    <h4>Amrita Kumari</h4>
-                    <span>Investor</span>
-                </div>
-
-            </div>
-            <div class="stars">
-                ★★★★★
-            </div>
-
-            <p>
-                Best real estate platform I have used.
-                Smart AI search and mobile experience
-                are amazing.
-            </p>
-
-
-        </div>
-
-        <!-- CARD 3 -->
-
-        <div class="testimonial-card">
-		    <div class="user-info">
-
-                <img src="https://randomuser.me/api/portraits/men/26.jpg">
-
-                <div>
-                    <h4>Amit Verma</h4>
-                    <span>Real Estate Agent</span>
-                </div>
-
-            </div>
-            <div class="stars">
-                ★★★★★
-            </div>
-
-            <p>
-                AI-powered property matching saved
-                me time and effort. Highly recommended
-                platform.
-            </p>
-
-
-
-        </div>
-
-        <!-- CARD 4 -->
-
-        <div class="testimonial-card">
-		
-            <div class="user-info">
-
-                <img src="https://randomuser.me/api/portraits/women/25.jpg">
-
-                <div>
-                    <h4>Priya Mehta</h4>
-                    <span>Home Buyer</span>
-                </div>
-
-            </div>
-            <div class="stars">
-                ★★★★★
-            </div>
-
-            <p>
-                Property search is extremely fast and
-                recommendations feel personalized and smart.
-            </p>
-
-
-        </div>
-
-        <!-- CARD 5 -->
-
-        <div class="testimonial-card">
-		    <div class="user-info">
-
-                <img src="https://randomuser.me/api/portraits/men/32.jpg">
-
-                <div>
-                    <h4>Karan Malhotra</h4>
-                    <span>Investor</span>
-                </div>
-
-            </div>
-            <div class="stars">
-                ★★★★★
-            </div>
-
-            <p>
-                Investment insights and AI predictions
-                helped me make profitable decisions quickly.
-            </p>
-
-        </div>
-
-        <!-- CARD 6 -->
-
-        <div class="testimonial-card">
-		    <div class="user-info">
-
-                <img src="https://randomuser.me/api/portraits/women/35.jpg">
-
-                <div>
-                    <h4>Sneha Kapoor</h4>
-                    <span>Property Buyer</span>
-                </div>
-
-            </div>
-            <div class="stars">
-                ★★★★★
-            </div>
-
-            <p>
-                Verified listings and transparent details
-                gave me complete confidence while buying.
-            </p>
-
-        </div>
-
-        <!-- CARD 7 -->
-
-        <div class="testimonial-card">
-		    <div class="user-info">
-
-                <img src="https://randomuser.me/api/portraits/men/44.jpg">
-
-                <div>
-                    <h4>Rohit Sinha</h4>
-                    <span>Broker</span>
-                </div>
-
-            </div>
-            <div class="stars">
-                ★★★★★
-            </div>
-
-            <p>
-                Mobile app experience is premium and
-                smooth. Easy to search and connect instantly.
-            </p>
-        </div>
-
-        <!-- CARD 8 -->
-
-        <div class="testimonial-card">
-		
-            <div class="user-info">
-
-                <img src="https://randomuser.me/api/portraits/women/32.jpg">
-
-                <div>
-                    <h4>Neha Arora</h4>
-                    <span>Real Estate Consultant</span>
-                </div>
-
-            </div>
-            <div class="stars">
-                ★★★★★
-            </div>
-
-            <p>
-                BrokerGenAI feels like the future of
-                real estate technology and automation.
-            </p>
-
-
-        </div>
-
-    </div>
-
-</section>
-  
-  <!-- PRICING SECTION -->
-
-<section class="pricing-section">
-
-    <div class="pricing-container">
-
-        <!-- LEFT -->
-
-        <div class="pricing-left">
-
-            <span class="pricing-badge">
-                PREMIUM ACCESS
-            </span>
-
-            <h2>
-                Unlock Full
-                <span class="brand-text">Broker<span>GenAI</span></span> Features
-            </h2>
-
-            <p>
-                Get access to AI-powered real estate tools,
-                premium property listings, investment insights,
-                smart recommendations and advanced business features.
-            </p>
-
-            <!-- FEATURES -->
-
-            <div class="pricing-features">
-
-                <div class="feature-item">
-                    <i class="bi bi-patch-check-fill feature-icon"></i> AI Property Recommendations
-                </div>
-
-                <div class="feature-item">
-                    <i class="bi bi-patch-check-fill feature-icon"></i> Verified Premium Listings
-                </div>
-
-                <div class="feature-item">
-                    <i class="bi bi-patch-check-fill feature-icon"></i> Investment Market Insights 
-                </div>
-
-                <div class="feature-item">
-                    <i class="bi bi-patch-check-fill feature-icon"></i> Unlimited Property Search
-                </div>
-
-                <div class="feature-item">
-                    <i class="bi bi-patch-check-fill feature-icon"></i> Smart AI Assistant
-                </div>
-
-                <div class="feature-item">
-                    <i class="bi bi-patch-check-fill feature-icon"></i> Priority Customer Support
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- RIGHT -->
-
-        <div class="pricing-right">
-
-            <h3>
-                Choose Your Plan
-            </h3>
-
-            <!-- PLANS -->
-
-            <div class="plans">
-
-                <!-- YEARLY -->
-
-                <div class="plan-card active-plan">
-
-                    <span class="plan-tag">
-                        MOST POPULAR
-                    </span>
-
-                    <h4>
-                        Annual Plan
-                    </h4>
-
-                    <div class="price">
-
-                        <span class="old-price">
-                            ₹36,000
-                        </span>
-
-                        <span class="new-price">
-                            ₹30,000
-                        </span>
-
-                    </div>
-
-                    <p>
-                        Save more with yearly subscription
-                    </p>
-
-                    <button class="plan-btn">
-                        Get Started
-                    </button>
-
-                </div>
-
-                <!-- MONTHLY -->
-
-                <div class="plan-card">
-
-                    <h4>
-                        Monthly Plan
-                    </h4>
-
-                    <div class="price">
-						<span class="old-price">
-                            ₹3,200
-                        </span>
-                        <span class="new-price">
-                            ₹3,000
-                        </span>
-
-                    </div>
-
-                    <p>
-                        Flexible monthly access subscription
-                    </p>
-
-                    <button class="plan-btn secondary">
-                        Subscribe
-                    </button>
-
-                </div>
-
-            </div>
-
-            <!-- EXTRA -->
-
-            <div class="topup-box">
-
-                <div class="topup-card">
-
-                    <h5>
-                        ₹1,000 Top Up
-                    </h5>
-
-                    <p>
-                        1000 AI Property Matches
-                    </p>
-
-                </div>
-
-                <div class="topup-card">
-
-                    <h5>
-                        ₹2,000 Top Up
-                    </h5>
-
-                    <p>
-                        2500 AI Property Matches
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-  
-
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#skills" onclick="closeMenu()">Skills</a>
+  <a href="#projects" onclick="closeMenu()">Projects</a>
+  <a href="#experience" onclick="closeMenu()">Experience</a>
+  <a href="#certifications" onclick="closeMenu()">Certifications</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
 </div>
 
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer class="footer">
-
-    <div class="footer-container">
-
-        <!-- LEFT -->
-
-        <div class="footer-about">
-
-            <h2 class="footer-logo">
-                Broker<span>GenAI</span>
-            </h2>
-
-            <p>
-                AI-powered real estate platform helping users
-                discover smart property investments and
-                verified listings.
-            </p>
-
-            <img
-            src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://brokergenai.com"
-            class="qr-code">
-
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">✦ Available for opportunities</div>
+      <h1 class="hero-title">Hi, I'm<br><span class="name">Sumit Singh</span></h1>
+	  <div class="hero-aka">also known as <span class="aka-hl">Amiable Musafir</span> &nbsp;·&nbsp; coder &nbsp;·&nbsp; blogger &nbsp;·&nbsp; rider</div>
+      <div class="hero-subtitle">
+		<span class="tag">☕ Java</span>
+		<span class="tag">🍃 Spring Boot</span>
+		<span class="tag">🅰️ Angular</span>
+		<span class="tag">🔷 Azure</span>
+		<span class="tag">☁️ AWS</span>
+		<span class="tag">🐳 Docker</span>
+		<span class="tag">☸️ Kubernetes</span>
+      </div>
+      <p class="hero-intro"><strong>Specialist Software Engineer at LTM (Larsen & Toubro)</strong> with 12+ years of experience across enterprise applications, cloud pipelines, and distributed systems. Awarded <strong>Employee of the Year</strong> at <strong>Wipro Ltd</strong> and <strong>Red Pyramid</strong>.
+	  <br/><br/>
+	  Beyond the screen, I’m a traveller and photographer, passionate about exploring the beauty, culture, and stories of India.
+	  </p>
+      <div class="hero-btns">
+        <button class="btn btn-primary" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
+          <i class="fas fa-diagram-project"></i> View Projects
+        </button>
+        <button class="btn btn-outline" onclick="alert('Resume download would trigger here.')">
+          <i class="fas fa-download"></i> Download Resume
+        </button>
+        <button class="btn btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+          <i class="fas fa-phone"></i> Contact Me
+        </button>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="avatar-wrap">
+        <div class="avatar-blob"></div>
+        <div class="avatar-blob"></div>
+        <div class="avatar-ring"></div>
+        <div class="avatar-img"><img src='img/sumit-pic.jpeg'></div>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <strong>12+ <i class="fas fa-briefcase"></i></strong>
+          <span>Years Exp.</span>
         </div>
-
-        <!-- RIGHT -->
-
-        <div class="footer-right-wrapper">
-
-            <!-- TOP LINKS -->
-
-            <div class="footer-links">
-
-                <!-- COMPANY -->
-
-                <div class="footer-column">
-
-                    <h4>Company</h4>
-
-                    <a href="#">About Us</a>
-                    <a href="#">Careers</a>
-                    <a href="#">Blog</a>
-                    <a href="#">Press</a>
-
-                </div>
-
-                <!-- PROPERTIES -->
-
-                <div class="footer-column">
-
-                    <h4>Properties</h4>
-
-                    <a href="#">Apartments</a>
-                    <a href="#">Villas</a>
-                    <a href="#">Commercial</a>
-                    <a href="#">Luxury Homes</a>
-
-                </div>
-
-                <!-- SUPPORT -->
-
-                <div class="footer-column">
-
-                    <h4>Support</h4>
-
-                    <a href="#">Help Center</a>
-                    <a href="#">FAQs</a>
-                    <a href="#">Contact</a>
-                    <a href="#">Privacy Policy</a>
-
-                </div>
-
-                <!-- DOWNLOAD -->
-
-                <div class="footer-column">
-
-                    <h4>Download App</h4>
-
-                    <a href="#">Android App</a>
-                    <a href="#">iOS App</a>
-                    <a href="#">AI Assistant</a>
-                    <a href="#">Agent Dashboard</a>
-
-                </div>
-
-            </div>
-
-            <!-- DOWNLOAD APP -->
-
-            <div class="footer-download">
-
-                <h3>
-                    DOWNLOAD OUR APP
-                </h3>
-
-                <div class="app-buttons">
-
-                    <!-- PLAY STORE -->
-
-                    <a href="#" class="app-btn">
-
-                        <i class="bi bi-google-play"></i>
-
-                        <div>
-                            <span>GET IT ON</span>
-                            <strong>Play Store</strong>
-                        </div>
-
-                    </a>
-
-                    <!-- APP STORE -->
-
-                    <a href="#" class="app-btn">
-
-                        <i class="bi bi-apple"></i>
-
-                        <div>
-                            <span>DOWNLOAD ON</span>
-                            <strong>App Store</strong>
-                        </div>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-            <!-- SOCIAL -->
-
-            <div class="footer-social">
-
-                <h4>
-                    SOCIAL LINKS
-                </h4>
-
-                <div class="social-icons">
-
-                    <a href="#">
-                        <i class="bi bi-facebook"></i>
-                    </a>
-
-                    <a href="#">
-                        <i class="bi bi-linkedin"></i>
-                    </a>
-
-                    <a href="#">
-                        <i class="bi bi-instagram"></i>
-                    </a>
-
-                    <a href="#">
-                        <i class="bi bi-youtube"></i>
-                    </a>
-
-                </div>
-
-            </div>
-
+        <div class="hero-stat">
+          <strong>15+ <i class="fas fa-diagram-project"></i></strong>
+          <span>Projects</span>
         </div>
+        <div class="hero-stat">
+          <strong>4 <i class="fas fa-graduation-cap"></i></strong>
+          <span>Certs</span>
+        </div>
+		<div class="hero-stat">
+			<strong>5 <i class="fas fa-trophy"></i></strong>
+			<span>Awards</span>
+		</div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">Who I am</div>
+      <h2 class="section-title">About <span class="hl">Me</span></h2>
+      <p class="section-desc">Crafting scalable enterprise software with cloud-native excellence.</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-card reveal">
+        <div class="about-text">
+          <p>I am a <strong>Java Full Stack Developer</strong> with extensive hands-on experience in designing, building, and deploying <strong>enterprise-grade applications</strong>. My expertise spans <strong>Spring Boot microservices, Angular-based frontends</strong>, and scalable <strong>cloud-native architectures</strong> powered by <strong>Azure and AWS</strong>.</p>
+          <p>I specialize in solving complex architectural challenges — from building high-performance <strong>RESTful APIs</strong> that handle millions of requests to orchestrating containerized workloads with <strong>Docker and Kubernetes</strong>.</p>
+          <p>I am equally passionate about <strong>system design, code quality, performance optimization, and DevOps practices</strong>, ensuring software solutions are scalable, secure, and production-ready.</p>
+		  <p>Beyond development, I enjoy <strong>competitive problem solving and DSA</strong>, continuously sharpening my analytical and system design skills.</p>
+		</div>
+        <div class="about-highlights">
+          <div class="highlight-item">
+            <div class="icon"><i class="fas fa-building"></i></div>
+            <strong>Enterprise Apps</strong>
+            <span>Scalable architecture</span>
+          </div>
+          <div class="highlight-item">
+            <div class="icon"><i class="fas fa-cloud"></i></div>
+            <strong>Cloud Native</strong>
+            <span>Azure & AWS certified</span>
+          </div>
+          <div class="highlight-item">
+            <div class="icon"> <i class="fas fa-gears"></i></div>
+            <strong>DevOps</strong>
+            <span>Docker & K8s</span>
+          </div>
+          <div class="highlight-item">
+            <div class="icon"><i class="fas fa-puzzle-piece"></i></div>
+            <strong>Problem Solver</strong>
+            <span>DSA & system design</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-metrics">
+        <div class="metric-card reveal reveal-delay-1">
+          <div class="metric-icon"><i class="fas fa-briefcase"></i></div>
+          <div class="metric-info">
+            <strong>12+ Years</strong>
+            <span>Professional experience in full-stack development</span>
+          </div>
+        </div>
+        <div class="metric-card reveal reveal-delay-2">
+          <div class="metric-icon"><i class="fas fa-code"></i></div>
+          <div class="metric-info">
+            <strong>15+ Technologies</strong>
+            <span>Java, Spring Boot, Angular, SQL, REST, Cloud, DevOps</span>
+          </div>
+        </div>
+        <div class="metric-card reveal reveal-delay-3">
+          <div class="metric-icon"><i class="fas fa-cloud"></i></div>
+          <div class="metric-info">
+            <strong>Multi-Cloud</strong>
+            <span>Production deployments on both Azure and AWS</span>
+          </div>
+        </div>
+        <div class="metric-card reveal reveal-delay-4">
+          <div class="metric-icon"><i class="fas fa-award"></i></div>
+          <div class="metric-info">
+            <strong>4 Certifications</strong>
+            <span>Azure, AWS, Kubernetes, Java — industry recognized</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">What I use</div>
+      <h2 class="section-title">Technical <span class="hl">Skills</span></h2>
+      <p class="section-desc">A curated set of technologies I work with daily to build production-ready systems.</p>
     </div>
 
-    <!-- BOTTOM -->
-
-    <div class="footer-bottom">
-        © 2026 BrokerGenAI. All Rights Reserved.
+    <div class="skill-cat-title reveal"><i class="fas fa-server"></i> Backend & Core</div>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <span class="skill-icon"><i class="fas fa-mug-hot"></i></span>
+        <div class="skill-name">Java</div>
+        <div class="skill-level"><div class="skill-level-bar" style="width:92%"></div></div>
+      </div>
+      <div class="skill-card reveal reveal-delay-1">
+        <span class="skill-icon"><i class="fas fa-leaf"></i></span>
+        <div class="skill-name">Spring Boot</div>
+        <div class="skill-level"><div class="skill-level-bar" style="width:88%"></div></div>
+      </div>
+      <div class="skill-card reveal reveal-delay-2">
+        <span class="skill-icon"><i class="fas fa-plug"></i></span>
+        <div class="skill-name">REST APIs</div>
+        <div class="skill-level"><div class="skill-level-bar" style="width:90%"></div></div>
+      </div>
+      <div class="skill-card reveal reveal-delay-3">
+        <span class="skill-icon"><i class="fas fa-sitemap"></i></span>
+        <div class="skill-name">Microservices</div>
+        <div class="skill-level"><div class="skill-level-bar" style="width:85%"></div></div>
+      </div>
+	  <div class="skill-card reveal reveal-delay-3">
+        <span class="skill-icon"><i class="fas fa-layer-group"></i></span>
+        <div class="skill-name">Struts 2.0</div>
+        <div class="skill-level"><div class="skill-level-bar" style="width:85%"></div></div>
+      </div>
     </div>
 
+    <div class="skill-cat-title reveal"><i class="fas fa-laptop-code"></i> Frontend</div>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <span class="skill-icon"><i class="fab fa-angular"></i></span>
+        <div class="skill-name">Angular</div>
+        <div class="skill-level"><div class="skill-level-bar" style="width:85%"></div></div>
+      </div>
+      <div class="skill-card reveal reveal-delay-1">
+        <span class="skill-icon"><i class="fab fa-js"></i></span>
+        <div class="skill-name">JavaScript</div>
+        <div class="skill-level"><div class="skill-level-bar" style="width:80%"></div></div>
+      </div>
+      <div class="skill-card reveal reveal-delay-2">
+        <span class="skill-icon"><i class="fas fa-code"></i></span>
+        <div class="skill-name">TypeScript</div>
+        <div class="skill-level"><div class="skill-level-bar" style="width:80%"></div></div>
+      </div>
+	  <div class="skill-card reveal reveal-delay-2">
+        <span class="skill-icon"><i class="fab fa-react"></i></span>
+        <div class="skill-name">React</div>
+        <div class="skill-level"><div class="skill-level-bar" style="width:80%"></div></div>
+      </div>
+	  <div class="skill-card reveal reveal-delay-2">
+        <span class="skill-icon"><i class="fab fa-css3-alt"></i></span>
+        <div class="skill-name">CSS</div>
+        <div class="skill-level"><div class="skill-level-bar" style="width:80%"></div></div>
+      </div>
+    </div>
+
+    <div class="skill-cat-title reveal"><i class="fas fa-cloud"></i> Cloud & DevOps</div>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <span class="skill-icon"><i class="fas fa-cloud"></i></span>
+        <div class="skill-name">Azure</div>
+        <div class="skill-level"><div class="skill-level-bar" style="width:82%"></div></div>
+      </div>
+      <div class="skill-card reveal reveal-delay-1">
+        <span class="skill-icon"><i class="fab fa-aws"></i></span>
+        <div class="skill-name">AWS</div>
+        <div class="skill-level"><div class="skill-level-bar" style="width:78%"></div></div>
+      </div>
+      <div class="skill-card reveal reveal-delay-2">
+        <span class="skill-icon"><i class="fab fa-docker"></i></span>
+        <div class="skill-name">Docker</div>
+        <div class="skill-level"><div class="skill-level-bar" style="width:82%"></div></div>
+      </div>
+      <div class="skill-card reveal reveal-delay-3">
+        <span class="skill-icon"><i class="fas fa-dharmachakra"></i></span>
+        <div class="skill-name">Kubernetes</div>
+        <div class="skill-level"><div class="skill-level-bar" style="width:75%"></div></div>
+      </div>
+    </div>
+
+    <div class="skill-cat-title reveal"><i class="fas fa-database"></i> Data </div>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <span class="skill-icon"><i class="fas fa-database"></i></span>
+        <div class="skill-name">SQL / MySQL</div>
+        <div class="skill-level"><div class="skill-level-bar" style="width:84%"></div></div>
+      </div>
+	  <div class="skill-card reveal reveal-delay-1">
+        <span class="skill-icon"><i class="fas fa-leaf"></i></span>
+        <div class="skill-name">MongoDB</div>
+        <div class="skill-level"><div class="skill-level-bar" style="width:80%"></div></div>
+      </div>
+	  <div class="skill-card reveal reveal-delay-2">
+        <span class="skill-icon"><i class="fas fa-database"></i></span>
+        <div class="skill-name">Oracle</div>
+        <div class="skill-level"><div class="skill-level-bar" style="width:80%"></div></div>
+      </div>
+	  <div class="skill-card reveal reveal-delay-3">
+        <span class="skill-icon"><i class="fas fa-project-diagram"></i></span>
+        <div class="skill-name">ArangoDB</div>
+        <div class="skill-level"><div class="skill-level-bar" style="width:80%"></div></div>
+      </div>
+	  <div class="skill-card reveal reveal-delay-4">
+        <span class="skill-icon"><i class="fas fa-database"></i></span>
+        <div class="skill-name">PostgreSQL</div>
+        <div class="skill-level"><div class="skill-level-bar" style="width:80%"></div></div>
+      </div>
+
+    </div>
+	
+	<div class="skill-cat-title reveal"><i class="fas fa-puzzle-piece"></i> Others</div>
+    <div class="skills-grid">
+      <div class="skill-card reveal reveal-delay">
+        <span class="skill-icon"><i class="fab fa-github"></i>
+        <div class="skill-name">Git / GitHub</div>
+        <div class="skill-level"><div class="skill-level-bar" style="width:90%"></div></div>
+      </div>
+      <div class="skill-card reveal reveal-delay-2">
+        <span class="skill-icon"><i class="fas fa-code"></i></span>
+        <div class="skill-name">DSA</div>
+        <div class="skill-level"><div class="skill-level-bar" style="width:80%"></div></div>
+      </div>
+	  <div class="skill-card reveal reveal-delay-3">
+        <span class="skill-icon"><i class="fas fa-book-open"></i></span>
+        <div class="skill-name">Swagger</div>
+        <div class="skill-level"><div class="skill-level-bar" style="width:80%"></div></div>
+      </div>
+	   <div class="skill-card reveal reveal-delay-4">
+        <span class="skill-icon"><i class="fas fa-stream"></i></span>
+        <div class="skill-name">Kafka</div>
+        <div class="skill-level"><div class="skill-level-bar" style="width:80%"></div></div>
+      </div>
+	  <div class="skill-card reveal reveal-delay-5">
+        <span class="skill-icon"><i class="fas fa-cogs"></i></span>
+        <div class="skill-name">Jenkins</div>
+        <div class="skill-level"><div class="skill-level-bar" style="width:80%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">What I've built</div>
+      <h2 class="section-title">Featured <span class="hl">Projects*</span></h2>
+      <p class="section-desc">A selection of enterprise applications and cloud projects I've designed and shipped.</p>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project-card reveal">
+        <div class="project-img">
+          <div class="project-img-bg"></div>
+          <img src='img/attendo.png' style="width: 100%; height: 100%;">
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="project-tag">Spring Boot</span>
+            <span class="project-tag">Angular</span>
+            <span class="project-tag">Java</span>
+			<span class="project-tag">Microservices</span>
+			<span class="project-tag">JWT</span>
+            <span class="project-tag">SQL</span>
+          </div>
+          <div class="project-title">Attendo</div>
+          <p class="project-desc">Smart Digital Attendance System — Attendo is a modern, user-friendly attendance management system that replaces manual registers with a fast, secure, and reliable digital solution.</p>
+          <div class="project-actions">
+            <button class="project-btn project-btn-primary" onclick="alert('Live demo coming soon')"><i class="fas fa-globe"></i> Live Demo</button>
+            <button class="project-btn project-btn-outline" onclick="alert('GitHub repo link')"><i class="fab fa-github"></i> GitHub</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-1">
+        <div class="project-img" style="font-size:3.5rem;"><img src='img/eduexam.png' style="width: 100%; height: 100%;"></div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="project-tag">Spring</span>
+            <span class="project-tag">Struts 2.0</span>
+            <span class="project-tag">HTML</span>
+			<span class="project-tag">SQL</span>
+			<span class="project-tag">JavaScript</span>
+			<span class="project-tag">Apache</span>
+          </div>
+          <div class="project-title">EduExams-App</div>
+          <p class="project-desc">EduExams-App is a web-based online examination system for creating, managing, and taking exams, offering a user-friendly experience for both administrators and students.</p>
+          <div class="project-actions">
+            <button class="project-btn project-btn-primary" onclick="alert('Live demo coming soon')"><i class="fas fa-globe"></i> Live Demo</button>
+            <button class="project-btn project-btn-outline" onclick="alert('GitHub repo link')"><i class="fab fa-github"></i> GitHub</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-2">
+        <div class="project-img" style="font-size:3.5rem;">
+		<img src='img/smartauditiq.png' style="width: 100%; height: 100%;">
+		</div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="project-tag">Spring Boot</span>
+            <span class="project-tag">Angular</span>
+            <span class="project-tag">Java</span>
+			<span class="project-tag">Microservices</span>
+			<span class="project-tag">JWT</span>
+            <span class="project-tag">SQL</span>
+          </div>
+          <div class="project-title">SmartAudit-IQ</div>
+          <p class="project-desc">An AI-powered audit management platform that automates processes, enhances compliance, and delivers real-time insights for smarter decision-making.</p>
+          <div class="project-actions">
+            <button class="project-btn project-btn-primary" onclick="alert('Live demo coming soon')"><i class="fas fa-globe"></i> Live Demo</button>
+            <button class="project-btn project-btn-outline" onclick="alert('GitHub repo link')"><i class="fab fa-github"></i> GitHub</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-img" style="font-size:3.5rem;">
+		<img src='img/sumitcoin.png' style="width: 100%; height: 100%;">
+		</div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="project-tag">HTML</span>
+            <span class="project-tag">CSS</span>
+            <span class="project-tag">AWS</span>
+            <span class="project-tag">JavaScript</span>
+          </div>
+          <div class="project-title">Sumit.co.in</div>
+          <p class="project-desc">Multi-cloud infrastructure deployment using Azure AKS and AWS EKS with Terraform IaC, automated CI/CD pipelines, and environment-agnostic configuration management.</p>
+          <div class="project-actions">
+            <button class="project-btn project-btn-primary" onclick="alert('Live demo coming soon')"><i class="fas fa-globe"></i> Live Demo</button>
+            <button class="project-btn project-btn-outline" onclick="alert('GitHub repo link')"><i class="fab fa-github"></i> GitHub</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-1">
+        <div class="project-img" style="font-size:3.5rem;">
+		<img src='img/dockerapp.png' style="width: 100%; height: 100%;">
+		</div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="project-tag">Docker</span>
+            <span class="project-tag">Microservices</span>
+            <span class="project-tag">Spring Boot</span>
+			<span class="project-tag">MongoDB</span>
+          </div>
+          <div class="project-title">Dockerized Microservices App</div>
+          <p class="project-desc">Production-grade microservices architecture containerized with Docker, orchestrated via Kubernetes with service mesh, auto-scaling, health checks, and centralized logging.</p>
+          <div class="project-actions">
+            <button class="project-btn project-btn-primary" onclick="alert('Live demo coming soon')"><i class="fas fa-globe"></i> Live Demo</button>
+            <button class="project-btn project-btn-outline" onclick="alert('GitHub repo link')"><i class="fab fa-github"></i> GitHub</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+	<div class="section-header reveal">
+	<br/>
+    <p><i>* This is a showcase of independently built enterprise and cloud solutions. For projects developed within organizations, please refer to my resume.</i></p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">Career journey</div>
+      <h2 class="section-title">Work <span class="hl">Experience</span></h2>
+      <p class="section-desc">Building impactful products across organizations, driving technical excellence at every step.</p>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item reveal">
+        <div class="timeline-date">📅 2021 – Present</div>
+        <div class="timeline-card">
+          <div class="timeline-role">Specialist Software Engineer</div>
+          <div class="timeline-company">LTM (Larsen & Toubro)</div>
+          <ul class="timeline-desc">
+			<li>Orchestrated a team of 8 developers to deliver a microservices architecture, reducing response time by 30% and enhancing scalability.
+            <li>Engineered RESTful APIs to seamlessly
+				integrate with third-party services and internal
+				applications, effectively managing over 1
+				million daily requests.</li>
+            <li>Streamlined code reviews, sprint planning,
+				and task assignments to optimize productivity,
+				leading to a 20% reduction in project delivery
+				timelines.</li>
+            <li>Collaborated with cross-functional teams and
+				stakeholders to ensure successful delivery and
+				alignment with business objectives.</li>
+            <li>Mentored developers on best practices, design patterns, and debugging, improving code quality and team skills.</li>
+            
+          </ul>
+          <div class="timeline-chips">
+            <span class="chip">Java</span>
+            <span class="chip">Spring Boot</span>
+            <span class="chip">Angular</span>
+            <span class="chip">Azure</span>
+            <span class="chip">Docker</span>
+            <span class="chip">Kubernetes</span>
+            <span class="chip">PostgreSQL</span>
+			<span class="chip">Arango</span>
+			<span class="chip">MongoDB</span>
+			<span class="chip">AWS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal reveal-delay-1">
+        <div class="timeline-date">📅 2015 – 2021</div>
+        <div class="timeline-card">
+          <div class="timeline-role">Senior Software Engineer</div>
+          <div class="timeline-company">Wipro Limited</div>
+          <ul class="timeline-desc">
+            <li>Built key modules with Spring Boot and Hibernate, enhancing system reliability and enabling 50% higher transaction capacity.</li>
+            <li>Led backend optimization initiatives including
+				refactoring and database indexing, resulting in
+				a significant 40% reduction in page load times.</li>
+            <li>Managed migration of legacy monolith to microservices, successfully transitioning over 75% of services.</li>
+            <li>Facilitated Agile ceremonies, conducted
+				stand-up meetings, and oversaw team
+				progress using Jira, fostering a well-structured
+				and efficient workflow.</li>
+            <li>Conducted regular code reviews and
+				contributed to documentation, ensuring
+				codebase maintainability and facilitating
+				knowledge transfer within the team.</li>
+			<li>Awarded Employee of the Year 2018 and Most Valuable Staff 2016</li>
+          </ul>
+          <div class="timeline-chips">
+            <span class="chip">Java</span>
+            <span class="chip">Spring MVC</span>
+            <span class="chip">HTML</span>
+            <span class="chip">Oracle 12c</span>
+			<span class="chip">MSSQL</span>
+            <span class="chip">REST APIs</span>
+            <span class="chip">Azure DevOps</span>
+			<span class="chip">WebLogic</span>
+			<span class="chip">Apache</span>
+          </div>
+        </div>
+      </div>
+	  
+	  <div class="timeline-item reveal reveal-delay-2">
+        <div class="timeline-date">📅 2013 – 2015</div>
+        <div class="timeline-card">
+          <div class="timeline-role">Java Developer</div>
+          <div class="timeline-company">Red Pyramid Infosystems Pvt Ltd</div>
+          <ul class="timeline-desc">
+            <li>Developed web applications using Struts 2, delivering scalable and maintainable enterprise solutions.</li>
+            <li>Designed and implemented backend services for mobile applications, enabling seamless integration with core systems.</li>
+            <li>Built and optimized RESTful services, improving performance and supporting cross-platform functionality.</li>
+            <li>Collaborated with cross-functional teams to deliver high-quality features aligned with business requirements.</li>
+            <li>Contributed to an award-winning application, recognized as Best Application at CIO 2014 for the Shipping Industry.</li>
+			<li>Awarded Employee of the Year 2014 for outstanding delivery and client satisfaction.</li>
+          </ul>
+          <div class="timeline-chips">
+            <span class="chip">Java</span>
+            <span class="chip">Struts 2.0</span>
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+			<span class="chip">SOAP</span>
+            <span class="chip">REST APIs</span>
+            <span class="chip">SVN</span>
+			<span class="chip">WebLogic</span>
+			<span class="chip">Apache</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">Credentials</div>
+      <h2 class="section-title">Certifi<span class="hl">cations</span></h2>
+      <p class="section-desc">Industry-recognized certifications validating my expertise in cloud, DevOps, and Java development.</p>
+    </div>
+    <div class="certs-grid">
+      <div class="cert-card reveal">
+        <div class="cert-icon"><i class="fas fa-cloud"></i></div>
+        <div class="cert-name">Microsoft Azure</div>
+        <!--<div class="cert-provider">Microsoft · AZ-900 / AZ-204</div>-->
+        <div class="cert-badge">✓ Certified</div>
+      </div>
+      <div class="cert-card reveal reveal-delay-1">
+        <div class="cert-icon"><i class="fab fa-aws"></i></div>
+        <div class="cert-name">AWS Cloud</div>
+        <!--<div class="cert-provider">Amazon Web Services · Cloud Practitioner</div>-->
+        <div class="cert-badge">✓ Certified</div>
+      </div>
+      <div class="cert-card reveal reveal-delay-2">
+        <div class="cert-icon"><i class="fas fa-dharmachakra"></i></div>
+        <div class="cert-name">Kubernetes</div>
+        <!--<div class="cert-provider">CNCF · CKA / CKAD</div>-->
+        <div class="cert-badge">✓ Certified</div>
+      </div>
+      <div class="cert-card reveal reveal-delay-3">
+        <div class="cert-icon"><i class="fas fa-mug-hot"></i></div>
+        <div class="cert-name">Java Certification</div>
+        <!--<div class="cert-provider">Oracle · OCA / OCP</div>-->
+        <div class="cert-badge">✓ Certified</div>
+      </div>
+    </div>
+	<div class="skill-cat-title reveal"><i class="fas fa-trophy"></i> Awards & Recognition</div>
+    <div class="skills-grid">
+	  <div class="skill-card reveal reveal-delay">
+        <span class="skill-icon"><i class="fas fa-award"></i></span>
+        <div class="skill-name">Super Crew Award</div>
+		<div class="ea-text">
+		<span>LTM · 2024</span>
+        <div class="award-badge"><i class="fas fa-bolt"></i> Spot Award</div>
+		</div>
+      </div>
+	  <div class="skill-card reveal reveal-delay-1">
+        <span class="skill-icon"><i class="fas fa-award"></i></span>
+        <div class="skill-name">Super Crew Award</div>
+		<div class="ea-text">
+		<span>LTM · 2023</span>
+        <div class="award-badge"><i class="fas fa-bolt"></i> Spot Award</div>
+		</div>
+      </div>
+      <div class="skill-card reveal reveal-delay-2">
+        <span class="skill-icon"><i class="fas fa-trophy"></i></span>
+        <div class="skill-name">Employee of the Year</div>
+		<div class="ea-text">
+		<span>Wipro Ltd · 2018</span>
+        <div class="award-badge"><i class="fas fa-trophy"></i> Gold Award</div>
+		</div>
+      </div>
+	  
+      <div class="skill-card reveal reveal-delay-3">
+        <span class="skill-icon"><i class="fas fa-award"></i></span>
+        <div class="skill-name">Most Valuable Staff</div>
+		<div class="ea-text">
+		<span>Wipro Ltd · 2016</span>
+        <div class="award-badge"><i class="fas fa-medal"></i> Excellence Award</div>
+		</div>
+      </div>
+	 <div class="skill-card reveal reveal-delay-4">
+        <span class="skill-icon"><i class="fas fa-trophy"></i></span>
+        <div class="skill-name">Employee of the Year</div>
+		<div class="ea-text">
+		<span>Red Pyramid · 2014</span>
+        <div class="award-badge"><i class="fas fa-trophy"></i> Gold Award</div>
+		</div>
+      </div>
+	 
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">Get in touch</div>
+      <h2 class="section-title">Let's <span class="hl">Connect</span></h2>
+      <p class="section-desc">Open to full-time roles, freelance projects, and interesting collaborations. Let's talk!</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item reveal">
+          <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
+          <div class="contact-item-text">
+            <strong>Email</strong>
+            <a href="mailto:sumit.brjn@gmail.com">sumit.brjn@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-item reveal reveal-delay-1">
+          <div class="contact-item-icon"><i class="fab fa-linkedin-in"></i></div>
+          <div class="contact-item-text">
+            <strong>LinkedIn</strong>
+            <a href="https://linkedin.com/in/sumit10" target="_blank">linkedin.com/in/sumit10</a>
+          </div>
+        </div>
+        <div class="contact-item reveal reveal-delay-2">
+          <div class="contact-item-icon"><i class="fab fa-github"></i></div>
+          <div class="contact-item-text">
+            <strong>GitHub</strong>
+            <a href="https://github.com/sumitcoin" target="_blank">github.com/sumitc</a>
+          </div>
+        </div>
+        <div class="contact-item reveal reveal-delay-3">
+          <div class="contact-item-icon"><i class="fas fa-phone-alt"></i></div>
+          <div class="contact-item-text">
+            <strong>Phone</strong>
+            <span>+91 99 5858 4710</span>
+          </div>
+        </div>
+        <div class="contact-item reveal reveal-delay-4">
+          <div class="contact-item-icon"><i class="fas fa-location-dot"></i></div>
+          <div class="contact-item-text">
+            <strong>Location</strong>
+            <span>India 🇮🇳 · Open to remote & relocation</span>
+          </div>
+        </div>
+      </div>
+	  <form id="contactForm">
+      <div class="contact-form reveal reveal-delay-2">
+        <h3><i class="fas fa-envelope"></i> Send a Message</h3>
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="Shourya Singh" id="name" required/>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="shourya@company.com" id="email" required />
+        </div>
+        <div class="form-group">
+          <label>Subject</label>
+          <input type="text" placeholder="Job opportunity / Project collaboration" id="subject"/>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea placeholder="Tell me about your project or opportunity..." id="message"></textarea>
+        </div>
+        <button class="form-submit" type="submit"><i class="fas fa-paper-plane"></i>&nbsp;&nbsp;Send Message</button>
+      </div>
+	  </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Sumit Singh</div>
+      <div class="footer-domain">sumit.co.in</div>
+    </div>
+	<div class="footer-socials">
+	  <a href="mailto:sumit.brjn@gmail.com" class="social-btn" title="Email">
+		<i class="fas fa-envelope"></i>
+	  </a>
+
+	  <a href="https://linkedin.com/in/sumit10" target="_blank" class="social-btn" title="LinkedIn">
+		<i class="fab fa-linkedin-in"></i>
+	  </a>
+
+	  <a href="https://github.com/sumitcoin" target="_blank" class="social-btn" title="GitHub">
+		<i class="fab fa-github"></i>
+	  </a>
+
+	  <a href="https://x.com/sumitcoin" class="social-btn" title="X">
+		<i class="fab fa-x-twitter"></i>
+	  </a>
+	</div>
+    <div class="footer-copy">
+      © 2025 <span>Sumit Singh</span>. All rights reserved.<br>
+      Designed & Developed by <span>Sumit Singh</span>
+    </div>
+  </div>
 </footer>
+
+<!-- BACK TO TOP -->
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+
+<script>
+	// --- Send Message ---
+	
+	document.getElementById("contactForm").addEventListener("submit", function(e) {
+	  e.preventDefault();
+	  const name = document.getElementById("name").value.trim();
+	  const email = document.getElementById("email").value.trim();
+	  const subject = document.getElementById("subject").value.trim();
+	  const message = document.getElementById("message").value.trim();
+
+	  const formData = new FormData();
+	  formData.append("name", name);
+	  formData.append("email", email);
+	  formData.append("subject", subject);
+	  formData.append("message", message);
+		
+  	  fetch("https://script.google.com/macros/s/AKfycbxcT_otD6TvCpiFMYuKv4-K7S9CECHFVd2KKPdcb32SSece7r_t9jR7_e91vebldKRo1A/exec", {
+	    method: "POST",
+	    body: formData,
+	    mode: "no-cors"
+	  })
+	  .then(() => {
+	    alert("Message sent successfully!");
+	    document.getElementById("contactForm").reset();
+	  })
+	  .catch((error) => {
+	    console.error("Error:", error);
+	  });
+	});
+  // ─── Theme Toggle ───
+  const themeBtn = document.getElementById('themeToggle');
+  const html = document.documentElement;
+  let dark = true;
+  themeBtn.addEventListener('click', () => {
+    dark = !dark;
+    html.setAttribute('data-theme', dark ? 'dark' : 'light');
+    themeBtn.textContent = dark ? '🌙' : '☀';
+  });
+
+  // ─── Mobile menu ───
+  const mobileNav = document.getElementById('mobileNav');
+  function toggleMenu() {
+    mobileNav.classList.toggle('open');
+    const isOpen = mobileNav.classList.contains('open');
+    mobileNav.style.display = isOpen ? 'flex' : 'none';
+    setTimeout(() => { if (isOpen) mobileNav.style.display = 'flex'; }, 0);
+  }
+  function closeMenu() { mobileNav.classList.remove('open'); }
+
+  // ─── Scroll reveal ───
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        // Trigger skill bars
+        const bars = e.target.querySelectorAll('.skill-level-bar');
+        bars.forEach(b => b.closest('.skill-card')?.classList.add('visible'));
+        if (e.target.classList.contains('skill-card')) e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // Also observe skill cards separately
+  document.querySelectorAll('.skill-card').forEach(el => observer.observe(el));
+
+  // ─── Back to top ───
+  const backTop = document.getElementById('backTop');
+  window.addEventListener('scroll', () => {
+    backTop.classList.toggle('show', window.scrollY > 400);
+  });
+
+  // ─── Navbar scroll style ───
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    if (window.scrollY > 40) {
+      nav.style.boxShadow = '0 4px 30px rgba(0,0,0,0.3)';
+    } else {
+      nav.style.boxShadow = 'none';
+    }
+  });
+
+  // ─── Mobile nav init ───
+  mobileNav.style.display = 'none';
+</script>
 </body>
 </html>
-<script>
-
-let slideIndex = 1;
-
-showSlides(slideIndex);
-
-/* NEXT / PREVIOUS */
-
-function changeSlide(n){
-
-    showSlides(slideIndex += n);
-
-}
-
-/* CURRENT */
-
-function currentSlide(n){
-
-    showSlides(slideIndex = n);
-
-}
-
-/* SHOW SLIDES */
-
-function showSlides(n){
-
-    let i;
-
-    let slides =
-        document.getElementsByClassName("slides");
-
-    let dots =
-        document.getElementsByClassName("dot");
-
-    /* RESET */
-
-    if(n > slides.length){
-        slideIndex = 1;
-    }
-
-    if(n < 1){
-        slideIndex = slides.length;
-    }
-
-    /* HIDE */
-
-    for(i = 0; i < slides.length; i++){
-
-        slides[i].style.display = "none";
-
-    }
-
-    /* REMOVE ACTIVE */
-
-    for(i = 0; i < dots.length; i++){
-
-        dots[i].className =
-        dots[i].className.replace(
-            " active",
-            ""
-        );
-
-    }
-
-    /* SHOW ACTIVE */
-
-    slides[slideIndex - 1].style.display = "block";
-
-    dots[slideIndex - 1].className +=
-    " active";
-
-}
-
-/* AUTO SLIDER */
-
-setInterval(() => {
-
-    changeSlide(1);
-
-}, 4000);
-
-</script>
