@@ -107,11 +107,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       background: var(--grad1); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       letter-spacing: -0.5px;
     }
-    .nav-brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
-    .nav-brand img { width: 34px; height: 34px; display: block; }
-    .nav-brand .logo-on-light { display: none; }
-    [data-theme="light"] .nav-brand .logo-on-light { display: block; }
-    [data-theme="light"] .nav-brand .logo-on-dark { display: none; }
     .nav-links { display: flex; gap: 0.25rem; align-items: center; }
     .nav-links a {
       font-size: 0.875rem; font-weight: 500; padding: 0.5rem 0.85rem;
@@ -639,11 +634,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 <!-- NAV -->
 <nav id="navbar">
   <div class="nav-inner">
-    <a class="nav-brand" href="/" aria-label="sumit.co.in home">
-      <img class="logo-on-dark" src="/logo/sumit-logo-on-dark.svg" alt="" width="34" height="34" />
-      <img class="logo-on-light" src="/logo/sumit-logo-on-light.svg" alt="" width="34" height="34" />
-      <div class="nav-logo">Sumit.co.in</div>
-    </a>
+    <div class="nav-logo">Sumit.co.in</div>
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
